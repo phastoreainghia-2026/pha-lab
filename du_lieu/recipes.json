@@ -2100,6 +2100,145 @@
      "do_trong_duc": 0.95
     }
    }
+  },
+  {
+   "id": "m21",
+   "id_kho": 21,
+   "ten": "Công thức Trà Sữa Vải Hoa Hồng",
+   "nhom": "Khác",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nhi Vinbar",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://youtu.be/gYUS20HDzQc?si=Y8JdMuiMpNyF-QuL"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "nuoc_cot_tra_sua",
+     "luong": 150,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_loc_nuoc_soi",
+     "luong": 50,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "mut_hoa_hong",
+     "luong": 15,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "sirup_vai",
+     "luong": 5,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_duong",
+     "luong": 5,
+     "don_vi": "ml"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Rót 150ml nước cốt trà sữa",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_cot_tra_sua",
+       "luong": 150,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Rót 50ml nước lọc/nước sôi",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_loc_nuoc_soi",
+       "luong": 50,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Rót 15ml mứt hoa hồng",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "mut_hoa_hong",
+       "luong": 15,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Rót 5ml sirup vải",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "sirup_vai",
+       "luong": 5,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Rót 5ml nước đường",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_duong",
+       "luong": 5,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Có thể thêm topping thạch củ năng",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 7,
+     "hanh_dong": "Khuấy đều",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    }
+   ],
+   "tang_me": null
   }
  ]
 }

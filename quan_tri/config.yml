@@ -30,16 +30,20 @@ collections:
                   - { label: 'Cốt cà phê phin', value: 'cot_ca_phe_phin' }
                   - { label: 'Đường', value: 'duong' }
                   - { label: 'Kem béo rich', value: 'kem_beo_rich' }
+                  - { label: 'Mứt hoa hồng', value: 'mut_hoa_hong' }
                   - { label: 'Nước cam vắt', value: 'nuoc_cam_vat' }
                   - { label: 'Nước cốt chanh vắt tươi', value: 'nuoc_cot_chanh_vat_tuoi' }
                   - { label: 'Nước cốt tắc', value: 'nuoc_cot_tac' }
                   - { label: 'Nước cốt trà lài', value: 'nuoc_cot_tra_lai' }
+                  - { label: 'Nước cốt trà sữa', value: 'nuoc_cot_tra_sua' }
                   - { label: 'Nước cốt trà sữa ô long', value: 'nuoc_cot_tra_sua_o_long' }
                   - { label: 'Nước cốt trà xanh', value: 'nuoc_cot_tra_xanh' }
                   - { label: 'Nước đường', value: 'nuoc_duong' }
+                  - { label: 'Nước lọc/nước sôi', value: 'nuoc_loc_nuoc_soi' }
                   - { label: 'Nước trà đường', value: 'nuoc_tra_duong' }
                   - { label: 'Nước vải-chanh dây ngâm', value: 'nuoc_vai_chanh_day_ngam' }
                   - { label: 'Sirup hạnh nhân', value: 'sirup_hanh_nhan' }
+                  - { label: 'Sirup vải', value: 'sirup_vai' }
                   - { label: 'Sốt xoài xay', value: 'sot_xoai_xay' }
                   - { label: 'Sữa đặc', value: 'sua_dac' }
                   - { label: 'Sữa tươi không đường', value: 'sua_tuoi_khong_duong' }
@@ -91,6 +95,7 @@ collections:
                 - { label: 'Trà vải chanh dây', value: 'm51' }
                 - { label: 'Cà phê hạnh nhân (bản đá)', value: 'm94' }
                 - { label: 'Matcha latte (bột kem béo)', value: 'm156' }
+                - { label: 'Công thức Trà Sữa Vải Hoa Hồng', value: 'm21' }
   - name: do_kho
     label: Độ khó
     files:

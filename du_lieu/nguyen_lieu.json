@@ -287,6 +287,34 @@
    "gia_von_don_vi": 76.1233
   },
   {
+   "id": "mut_hoa_hong",
+   "ten": "Mứt hoa hồng",
+   "nhom": "khac",
+   "don_vi": "ml",
+   "mau_hien_thi": "#d9c7a3",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [
+    {
+     "ma": "SP000756",
+     "ten": "Mứt Hoa Hồng Boduo 1Kg"
+    },
+    {
+     "ma": "SP000724",
+     "ten": "Hoa Hồng Khô"
+    },
+    {
+     "ma": "SP000618",
+     "ten": "Mứt Ổi Hồng Boduo 1kg"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
    "id": "nuoc_am",
    "ten": "Nước ấm 70-80°C",
    "nhom": "nuoc",
@@ -402,6 +430,21 @@
    "gia_von_don_vi": null
   },
   {
+   "id": "nuoc_cot_tra_sua",
+   "ten": "Nước cốt trà sữa",
+   "nhom": "tra",
+   "don_vi": "ml",
+   "mau_hien_thi": "#d9c9a0",
+   "do_trong_duc": 0.9,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
    "id": "nuoc_cot_tra_sua_o_long",
    "ten": "Nước cốt trà sữa ô long",
    "nhom": "tra",
@@ -508,6 +551,21 @@
    "gia_von_don_vi": null
   },
   {
+   "id": "nuoc_loc_nuoc_soi",
+   "ten": "Nước lọc/nước sôi",
+   "nhom": "nuoc",
+   "don_vi": "ml",
+   "mau_hien_thi": "#cfe6f2",
+   "do_trong_duc": 0.35,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
    "id": "nuoc_soi",
    "ten": "Nước sôi",
    "nhom": "nuoc",
@@ -590,6 +648,21 @@
      "ten": "Siro Davinci Hạnh Nhân"
     }
    ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "sirup_vai",
+   "ten": "Sirup vải",
+   "nhom": "topping",
+   "don_vi": "ml",
+   "mau_hien_thi": "#f5e9e4",
+   "do_trong_duc": 0.95,
+   "dang": "dem",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
    "gia_von_don_vi": null
   },
   {

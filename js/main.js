@@ -28,6 +28,8 @@ const luu = {
 let DL = null;       // dữ liệu đã tải
 let TT = null;       // tiến trình người chơi (lưu trong trình duyệt)
 let TK = { man() {}, suKien() {} }; // thống kê ẩn danh (chỉ bật khi có mã GoatCounter)
+let manHienTai = 0; // tăng mỗi lần đổi màn
+const tre = (fn, ms) => { const m = manHienTai; setTimeout(() => { if (m === manHienTai) fn(); }, ms); }; // hẹn giờ, bỏ nếu đã sang màn khác
 let cheDoGoc = null; // chế độ khi vào thử thách ngày (ép Thử thách, về phòng lab thì trả lại)
 const luuTT = () => luu.ghi("tien_trinh", TT);
 const dsMoKhoa = () => monMoKhoa(DL.mon, TT, DL.tt).filter((x) => x.mo).map((x) => x.mon);
@@ -144,6 +146,7 @@ function chaoVao() {
 
 // ======================================================= MÀN HÌNH CHỦ
 function manChu() {
+  manHienTai++;
   if (cheDoGoc) { cheDo = cheDoGoc; cheDoGoc = null; }
   TK.man("chu", "Phòng lab");
   const mk = monMoKhoa(DL.mon, TT, DL.tt);
@@ -182,7 +185,7 @@ function manChu() {
   batParallax($(".canh-khung"));
   chaoVao();
   $("#tu-do").onclick = () => { Am.ting(); Giong.noi("Pha tự do"); manPha(monTuDo(), null, { tuDo: true }); };
-  $("#mo-quay").onclick = () => { Am.ting(); Giong.noi("Mở quầy"); batDauCa(); };
+  $("#mo-quay").onclick = () => { $("#mo-quay").disabled = true; Am.ting(); Giong.noi("Mở quầy", { toiDa: 1500 }).then(batDauCa); };
   capNutCai();
   $("#cai").onclick = async () => {
     Am.cham();
@@ -204,6 +207,7 @@ function manChu() {
 
 // ======================================================= MÀN PHA
 function manPha(mon, ck = null, opt = {}) {
+  manHienTai++;
   const suCo = ck ? ck.suCo?.[ck.i] || null : null; // sự cố ngẫu nhiên của khách này
   const han = ck ? thoiHanKhach(mon, DL.khach, cheDo, suCo) : 0; // giây khách chịu chờ
   const bd = performance.now();
@@ -261,7 +265,13 @@ function manPha(mon, ck = null, opt = {}) {
   batParallax($(".canh-khung"));
   TK.man("pha/" + (mon.id || "tu-do"), mon.ten);
   { const ca = Giong.cau();
-    if (ck) { Am.chuong(); if (ca) setTimeout(() => Giong.noi(ca.khach_goi.replace("{mon}", mon.ten)), 500); if (suCo) setTimeout(() => Giong.noi(suCo.ten, { xep: true }), 600); }
+    if (ck) {
+      Am.chuong();
+      let cuoi = Promise.resolve();
+      if (ca) cuoi = Giong.noi(ca.khach_goi.replace("{mon}", mon.ten), { xep: true });
+      if (ca && suCo) cuoi = Giong.noi(suCo.ten, { xep: true });
+      cuoi.then(() => { if (!sanSangDoc) { sanSangDoc = true; capNhat(); } }); // đọc xong lời chào mới đọc gợi ý bước 1
+    }
     else if (opt.tuDo) Giong.noi("Pha tự do");
     else if (ca) Giong.noi((opt.daily ? ca.thu_thach_ngay : ca.chon_mon).replace("{mon}", mon.ten)); }
 
@@ -281,7 +291,8 @@ function manPha(mon, ck = null, opt = {}) {
   }
   // đọc gợi ý bước (xếp sau câu đang đọc; bỏ qua nếu người chơi đã làm tiếp)
   let khoaDoc = null;
-  const docHint = (k, t) => { if (k === khoaDoc) return; khoaDoc = k; Giong.noi(t, { xep: true, hopLe: () => khoaDoc === k }); };
+  let sanSangDoc = !ck; // ca khách: chờ lời chào xong mới đọc gợi ý
+  const docHint = (k, t) => { if (!sanSangDoc || k === khoaDoc) return; khoaDoc = k; Giong.noi(t, { xep: true, hopLe: () => khoaDoc === k }); };
   function capNhat() {
     if ($("#coctxt")) $("#coctxt").textContent = coc.length ? coc.join(", ") : "trống";
     $("#tongml").textContent = Math.round(ly.tongMl()) + " ml";
@@ -539,6 +550,7 @@ function phatThuong(res) { // đọc phần thưởng sau lời đánh giá, l�
 }
 
 function manHoSo() {
+  manHienTai++;
   document.body.classList.remove("lab");
   Am.nen(false);
   const hg = hangTheoXp(TT.xp, DL.tt), pct = hg.den ? Math.round(((TT.xp - hg.tu) / (hg.den - hg.tu)) * 100) : 100;
@@ -594,6 +606,7 @@ function monTuDo() {
 }
 
 function manKetQuaTuDo(events, ly) {
+  manHienTai++;
   document.body.classList.remove("lab");
   Am.nen(false);
   const d = doanMon(DL.mon, events, DL.thaoTac, tenNl);
@@ -602,7 +615,7 @@ function manKetQuaTuDo(events, ly) {
   const ca = Giong.cau();
   const tieuDe = d.muc === "chuan" ? `Chuẩn món ${d.mon.ten}!` : d.muc === "giong" ? `Giống món ${d.mon.ten}` : "Một ly hoàn toàn mới";
   Am.ketQua(d.muc === "chuan" ? 3 : d.muc === "giong" ? 2 : 1);
-  if (ca) setTimeout(() => Giong.noi((d.muc === "chuan" ? ca.tu_do_chuan : d.muc === "giong" ? ca.tu_do_giong : ca.tu_do_moi).replace("{mon}", d.mon?.ten || "")), 900);
+  if (ca) tre(() => Giong.noi((d.muc === "chuan" ? ca.tu_do_chuan : d.muc === "giong" ? ca.tu_do_giong : ca.tu_do_moi).replace("{mon}", d.mon?.ten || "")), 900);
   if (d.muc === "chuan") Hieu.chayThuong({ baSao: true });
   TK.suKien(`pha-tu-do/${d.muc}/${d.mon?.id || "khong"}`);
   const thieu = r ? r.chi_tiet.filter((c) => !c.ok) : [];
@@ -666,10 +679,11 @@ const SAO = (n) => "★".repeat(n) + "☆".repeat(3 - n);
 const TOC = { nhanh: "Nhanh", vua: "Vừa", cham: "Chậm", bo_di: "Bỏ đi" };
 
 function khachBoDi(mon, ck) {
+  manHienTai++;
   ghiKhach(ck, mon, { sao: 0, saoToc: 0, toc: "bo_di", diem: 0, combo: 0, boDi: true });
   document.body.classList.remove("lab");
   Am.nen(false); Am.khachBoDi(); Hieu.chayThuong({ boDi: true }); TK.suKien("khach/bo-di/" + mon.id);
-  const ca = Giong.cau(); if (ca) setTimeout(() => Giong.noi(ca.khach_bo_di), 400);
+  const ca = Giong.cau(); if (ca) tre(() => Giong.noi(ca.khach_bo_di), 400);
   app.innerHTML = `
     <div class="thanh"><h2>${mon.ten}</h2></div>
     <div class="the diem"><div class="mat-lon">${matKhach(ck.i * 7, "gian")}</div><div class="so" style="font-size:40px">Khách bỏ đi</div>
@@ -679,16 +693,17 @@ function khachBoDi(mon, ck) {
 }
 
 function manKetCa(ck) {
+  manHienTai++;
   const t = tongKetCa(ck.kq, DL.khach);
   const res = capNhatSauCa(TT, t, DL.mon, DL.tt, homNay()); TT = res.tt; luuTT();
-  setTimeout(() => phatThuong(res), 1500);
+  tre(() => phatThuong(res), 1500);
   Hieu.chayThuong({ baSao: t.hang === 3, hang: !!res.moi.hang, moi: !!(res.moi.monMoKhoa.length || res.moi.huyHieu.length) });
   TK.suKien("ca/xong/" + t.hang);
   const cao = luu.doc("ca_cao", 0), kyLuc = t.diem > cao;
   if (kyLuc) luu.ghi("ca_cao", t.diem);
   document.body.classList.remove("lab");
-  Am.nen(false); Am.ketQua(t.hang); if (t.hang === 3) setTimeout(() => Am.kaChing(), 500);
-  const ca = Giong.cau(); if (ca) setTimeout(() => Giong.noi(ca.ket_ca[t.hang]), 900);
+  Am.nen(false); Am.ketQua(t.hang); if (t.hang === 3) tre(() => Am.kaChing(), 500);
+  const ca = Giong.cau(); if (ca) tre(() => Giong.noi(ca.ket_ca[t.hang]), 900);
   app.innerHTML = `
     <div class="thanh"><h2>Tổng kết ca</h2></div>
     <div class="the diem"><div class="sao">${SAO(t.hang)}</div><div class="so">${t.diem}</div>
@@ -704,6 +719,7 @@ function manKetCa(ck) {
 
 // ======================================================= MÀN KẾT QUẢ
 function manKetQua(mon, events, ly, kh = null, opt = {}) {
+  manHienTai++;
   const svgChuoi = new XMLSerializer().serializeToString(ly.svg);
   document.body.classList.remove("lab");
   Am.nen(false);
@@ -711,16 +727,16 @@ function manKetQua(mon, events, ly, kh = null, opt = {}) {
   let kk = null; // kết quả theo khách (chỉ ở chế độ Khách gọi món)
   if (kh) { kk = chamKhach({ saoDo: r.sao, tong: r.tong, giayDung: kh.giayDung, han: kh.han }, DL.khach, kh.ck.combo, kh.suCo); ghiKhach(kh.ck, mon, kk); }
   if (kk) {
-    Am.ketQua(kk.sao); if (kk.sao === 3) setTimeout(() => Am.kaChing(), 500);
-    setTimeout(() => { const ca = Giong.cau(); if (ca) Giong.noi(ca.khach_ket_qua[kk.sao]); }, 900);
+    Am.ketQua(kk.sao); if (kk.sao === 3) tre(() => Am.kaChing(), 500);
+    tre(() => { const ca = Giong.cau(); if (ca) Giong.noi(ca.khach_ket_qua[kk.sao]); }, 900);
   } else {
     Am.ketQua(r.sao);
-    setTimeout(() => { const ca = Giong.cau(); if (ca) Giong.noi(ca.ket_qua[r.sao]); }, 900);
+    tre(() => { const ca = Giong.cau(); if (ca) Giong.noi(ca.ket_qua[r.sao]); }, 900);
   }
   TK.suKien(`ly/xong/${mon.id}/${kk ? kk.sao : r.sao}`);
   const res = capNhatSauLy(TT, { mon, r, cheDo, kk, daily: !!opt.daily, ngay: homNay() }, DL.mon, DL.tt);
   TT = res.tt; luuTT();
-  setTimeout(() => phatThuong(res), 1500);
+  tre(() => phatThuong(res), 1500);
   Hieu.chayThuong({ baSao: (kk ? kk.sao : r.sao) === 3, hang: !!res.moi.hang, moi: !!(res.moi.monMoKhoa.length || res.moi.huyHieu.length || res.hangNgay?.lanDau) });
   const cp = tinhChiPhi(mon, DL.thuVien);
   const diem = luu.doc("diem_cao", {});

@@ -7,7 +7,7 @@
 //   đánh bọt: máy đánh bọt rung ù                    | nếm / rắc / dầm: mỗi thứ một tiếng
 // Trình duyệt chỉ cho phát tiếng sau lần chạm đầu tiên => gọi Am.batDau() trong sự kiện chạm.
 
-let ctx = null, tong = null, nhieu = null, ham = null;
+let ctx = null, tong = null, nhieu = null, ham = null, phoTT = null;
 let tat = false;
 try { tat = localStorage.getItem("phalab.tat_tieng") === "1"; } catch { /* bỏ qua */ }
 
@@ -203,6 +203,131 @@ export const Am = {
   },
 
   /** tiếng nền phòng lab rất nhỏ (tủ mát ù nhẹ) */
+  /** Âm thanh khu phố (nền động, tự phát liên tục): xe cộ qua lại, chim hót, nhạc nhẹ, tiếng người nói chuyện xa xa. */
+  pho(bat) {
+    const c = san(); if (!c) return;
+    if (!bat) {
+      if (!phoTT) return;
+      const p = phoTT; phoTT = null;
+      p.bus.gain.cancelScheduledValues(c.currentTime); p.bus.gain.setValueAtTime(p.bus.gain.value, c.currentTime); p.bus.gain.linearRampToValueAtTime(0, c.currentTime + 0.6);
+      p.doi.forEach((h) => { clearTimeout(h); clearInterval(h); });
+      setTimeout(() => p.dung.forEach((f) => { try { f(); } catch { /* đã dừng */ } }), 800);
+      return;
+    }
+    if (phoTT) return;
+    const bus = c.createGain(); bus.gain.value = 0; bus.connect(tong);
+    bus.gain.linearRampToValueAtTime(2.2, c.currentTime + 2.5); // nền êm nhưng nghe rõ
+    const p = { bus, doi: [], dung: [] }; phoTT = p;
+    // chỉ lên lịch khi âm thanh đã chạy thật (trình duyệt chặn đến khi chạm lần đầu), tránh dồn cục tiếng
+    const hen = (f, ms) => { if (phoTT === p) p.doi.push(setTimeout(() => (phoTT !== p ? null : c.state === "running" ? f() : hen(f, 400)), ms)); };
+    const lai = (tr) => { if (c.createStereoPanner) { const s = c.createStereoPanner(); s.pan.value = tr; s.connect(bus); return s; } return bus; };
+    const nguonNhieu = (loai, f, q) => {
+      const s = c.createBufferSource(); s.buffer = nhieu; s.loop = true;
+      const fl = c.createBiquadFilter(); fl.type = loai; fl.frequency.value = f; fl.Q.value = q;
+      s.connect(fl); s.start(0, Math.random()); p.dung.push(() => s.stop());
+      return fl;
+    };
+
+    // 1) tiếng đường phố xa: ù trầm, lên xuống chậm
+    { const fl = nguonNhieu("lowpass", 240, 0.7), g = c.createGain(); g.gain.value = 0.07; fl.connect(g); g.connect(bus);
+      const doiMuc = () => { g.gain.linearRampToValueAtTime(ngau(0.04, 0.095), c.currentTime + ngau(2, 4)); hen(doiMuc, ngau(2500, 4500)); }; doiMuc(); }
+
+    // 2) xe máy / ô tô chạy ngang (trái sang phải hoặc ngược lại), thỉnh thoảng bấm còi
+    const xe = () => {
+      const t = c.currentTime, dai = ngau(2.6, 4.2), huong = Math.random() < 0.5 ? -1 : 1, may = Math.random() < 0.72;
+      const pan = lai(-0.9 * huong), cp = pan.pan;
+      if (cp) { cp.setValueAtTime(-0.9 * huong, t); cp.linearRampToValueAtTime(0.9 * huong, t + dai); }
+      const g = c.createGain(); g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(may ? 0.07 : 0.06, t + dai * 0.5); g.gain.linearRampToValueAtTime(0.0001, t + dai); g.connect(pan);
+      if (may) { // động cơ xe máy: sóng răng cưa trầm, cao độ giảm dần khi xe đi qua (hiệu ứng Doppler)
+        const o = c.createOscillator(); o.type = "sawtooth"; const f0 = ngau(75, 110);
+        o.frequency.setValueAtTime(f0 * 1.18, t); o.frequency.linearRampToValueAtTime(f0 * 0.86, t + dai);
+        const fl = c.createBiquadFilter(); fl.type = "lowpass"; fl.frequency.value = 520; fl.Q.value = 2;
+        const rung = c.createOscillator(); rung.frequency.value = ngau(22, 34); const rg = c.createGain(); rg.gain.value = 0.35;
+        const am = c.createGain(); am.gain.value = 0.65; rung.connect(rg); rg.connect(am.gain); o.connect(fl); fl.connect(am); am.connect(g);
+        o.start(t); rung.start(t); o.stop(t + dai + 0.1); rung.stop(t + dai + 0.1);
+      } else { // ô tô: tiếng lốp xào xạc
+        const s = c.createBufferSource(); s.buffer = nhieu; s.loop = true; const fl = c.createBiquadFilter(); fl.type = "bandpass"; fl.frequency.value = ngau(380, 620); fl.Q.value = 0.8;
+        s.connect(fl); fl.connect(g); s.start(t, Math.random()); s.stop(t + dai + 0.1);
+      }
+      if (Math.random() < 0.22) { // bóp còi "píp píp"
+        const lanBip = Math.random() < 0.5 ? 1 : 2;
+        for (let i = 0; i < lanBip; i++) {
+          const tb = t + dai * 0.35 + i * 0.28;
+          [430, 540].forEach((f) => {
+            const o = c.createOscillator(); o.type = "square"; o.frequency.value = f; const gg = c.createGain(); gg.gain.setValueAtTime(0.0001, tb);
+            gg.gain.linearRampToValueAtTime(0.012, tb + 0.015); gg.gain.setValueAtTime(0.012, tb + 0.13); gg.gain.linearRampToValueAtTime(0.0001, tb + 0.16);
+            const fl = c.createBiquadFilter(); fl.type = "lowpass"; fl.frequency.value = 1600; o.connect(fl); fl.connect(gg); gg.connect(pan); o.start(tb); o.stop(tb + 0.2);
+          });
+        }
+      }
+      hen(xe, ngau(2200, 7000));
+    };
+    hen(xe, 900);
+
+    // 3) chim hót: chuỗi nốt cao, trượt nhanh, ở vị trí ngẫu nhiên
+    const chim = () => {
+      const pan = lai(ngau(-0.8, 0.8)), n = 2 + Math.floor(Math.random() * 5), kieu = Math.random();
+      let t = c.currentTime, f = ngau(2300, 3900);
+      for (let i = 0; i < n; i++) {
+        const dai = kieu < 0.5 ? ngau(0.05, 0.1) : ngau(0.09, 0.17), f2 = f * (Math.random() < 0.5 ? ngau(1.25, 1.7) : ngau(0.6, 0.85));
+        const o = c.createOscillator(); o.type = "sine"; o.frequency.setValueAtTime(f, t); o.frequency.exponentialRampToValueAtTime(Math.min(5200, f2), t + dai);
+        const g = c.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.02, t + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t + dai);
+        o.connect(g); g.connect(pan); o.start(t); o.stop(t + dai + 0.03);
+        t += dai + ngau(0.03, 0.09); if (kieu > 0.6) f = ngau(2300, 3900);
+      }
+      hen(chim, ngau(1400, 6500));
+    };
+    hen(chim, 1500);
+
+    // 4) nhạc nhẹ: hợp âm nền mềm + vài nốt gảy thang ngũ âm, thong thả
+    {
+      const HOP = [[220, 261.6, 329.6], [174.6, 220, 261.6], [261.6, 329.6, 392], [196, 246.9, 293.7]]; // Am - F - C - G
+      const NGU = [523.3, 587.3, 659.3, 784, 880, 1046.5]; let b = 0;
+      const nhac0 = c.createGain(); nhac0.gain.value = 0.9; nhac0.connect(bus);
+      const hopAm = () => {
+        const t = c.currentTime, ch = HOP[b++ % HOP.length];
+        ch.forEach((f, i) => {
+          const o = c.createOscillator(); o.type = "triangle"; o.frequency.value = f * (i === 0 ? 0.5 : 1);
+          const fl = c.createBiquadFilter(); fl.type = "lowpass"; fl.frequency.value = 900; const g = c.createGain();
+          g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.018, t + 1.6); g.gain.linearRampToValueAtTime(0.0001, t + 7.4);
+          o.connect(fl); fl.connect(g); g.connect(nhac0); o.start(t); o.stop(t + 7.6);
+        });
+        hen(hopAm, 7000);
+      };
+      const gay = () => {
+        const t = c.currentTime, f = NGU[Math.floor(Math.random() * NGU.length)];
+        [1, 2].forEach((h, i) => {
+          const o = c.createOscillator(); o.type = i ? "sine" : "triangle"; o.frequency.value = f * h; const g = c.createGain();
+          g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(i ? 0.004 : 0.016, t + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t + 1.5);
+          o.connect(g); g.connect(nhac0); o.start(t); o.stop(t + 1.6);
+        });
+        hen(gay, Math.random() < 0.3 ? ngau(300, 500) : ngau(900, 2200));
+      };
+      hopAm(); hen(gay, 1200);
+    }
+
+    // 5) tiếng người nói chuyện xa xa: ì ào + từng "âm tiết" giọng người
+    {
+      const fl = nguonNhieu("bandpass", 650, 1.1), g = c.createGain(); g.gain.value = 0.03; fl.connect(g); g.connect(bus);
+      const doi = () => { g.gain.linearRampToValueAtTime(ngau(0.015, 0.045), c.currentTime + ngau(0.8, 1.8)); fl.frequency.linearRampToValueAtTime(ngau(480, 900), c.currentTime + 1.5); hen(doi, ngau(900, 2000)); }; doi();
+      const noi = () => {
+        const pan = lai(ngau(-0.9, 0.9)), nguoiNu = Math.random() < 0.5, cao = nguoiNu ? ngau(190, 250) : ngau(105, 150), so = 2 + Math.floor(Math.random() * 5);
+        let t = c.currentTime + 0.05;
+        for (let i = 0; i < so; i++) {
+          const dai = ngau(0.09, 0.2), o = c.createOscillator(); o.type = "sawtooth"; o.frequency.setValueAtTime(cao * ngau(0.9, 1.15), t); o.frequency.linearRampToValueAtTime(cao * ngau(0.85, 1.2), t + dai);
+          const f1 = c.createBiquadFilter(); f1.type = "bandpass"; f1.frequency.value = ngau(450, 850); f1.Q.value = 4;
+          const f2 = c.createBiquadFilter(); f2.type = "bandpass"; f2.frequency.value = ngau(1100, 2200); f2.Q.value = 5;
+          const gg = c.createGain(); gg.gain.setValueAtTime(0.0001, t); gg.gain.linearRampToValueAtTime(0.022, t + 0.025); gg.gain.linearRampToValueAtTime(0.0001, t + dai);
+          o.connect(f1); o.connect(f2); f1.connect(gg); f2.connect(gg); gg.connect(pan); o.start(t); o.stop(t + dai + 0.03);
+          t += dai + ngau(0.02, 0.1);
+        }
+        hen(noi, Math.random() < 0.35 ? ngau(400, 900) : ngau(1500, 4200));
+      };
+      hen(noi, 1000); hen(noi, 2600);
+    }
+  },
+
   nen(bat) {
     const c = san(); if (!c) return;
     if (bat && !ham) {

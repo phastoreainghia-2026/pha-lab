@@ -2,6 +2,7 @@
 import { Ly } from "./glass.js";
 import { chamDiem, tinhChiPhi, viecCanLam, doanMon, chiPhiTuDo } from "./score.js";
 import { canhPhongLab, canhQuay, batParallax, matKhach } from "./lab.js";
+import { canhPho, ganPho } from "./pho.js";
 import { tienTrinhTrong, hangTheoXp, monMoKhoa, monHomNay, capNhatSauLy, capNhatSauCa, saoTong, chuoiChiaSe, homNay, ngayDep, xuatTienTrinh, nhapTienTrinh, bangDiemCa } from "./tien_trinh.js";
 import { thoiHanKhach, tamTrangKhach, chamKhach, tongKetCa, chonSuCo } from "./khach.js";
 import { thongKeTrinhDuyet } from "./thong_ke.js";
@@ -145,6 +146,22 @@ function chaoVao() {
 }
 
 // ======================================================= MÀN HÌNH CHỦ
+// Màn mở đầu: khu phố, bấm bảng hiệu cửa hàng để vào phòng lab
+function manPho() {
+  manHienTai++;
+  TK.man("pho", "Khu phố");
+  const ten = DL.cuaHang.ten || "Pha Store";
+  document.body.classList.remove("lab");
+  document.body.classList.add("pho");
+  Am.nen(false);
+  app.innerHTML = canhPho(ten) + `<div class="ph-hud"><span class="logo-lab">${ten}</span><button class="am" id="giong" aria-label="Bật hoặc tắt giọng nói"></button><button class="am" id="am" aria-label="Bật hoặc tắt âm thanh"></button></div>
+    <div class="ph-cta"><button id="ph-vao">Vào ${ten}</button><small>Chạm bảng hiệu để vào quán · vuốt ngang để dạo phố</small></div>`;
+  nutAm(); nutGiong();
+  Am.pho(true);
+  ganPho(app, { vao: manChu, noi: toast, cham: () => Am.cham() });
+  $("#ph-vao").onclick = () => $("#ph-pha").dispatchEvent(new MouseEvent("click", { bubbles: true }));
+}
+
 function manChu() {
   manHienTai++;
   if (cheDoGoc) { cheDo = cheDoGoc; cheDoGoc = null; }
@@ -152,12 +169,14 @@ function manChu() {
   const mk = monMoKhoa(DL.mon, TT, DL.tt);
   const hg = hangTheoXp(TT.xp, DL.tt), pct = hg.den ? Math.round(((TT.xp - hg.tu) / (hg.den - hg.tu)) * 100) : 100;
   const hnay = homNay(), monNgay = monHomNay(DL.mon, hnay), xongNgay = TT.hang_ngay[hnay];
+  document.body.classList.remove("pho");
   document.body.classList.add("lab");
+  Am.pho(false);
   Am.nen(true);
   app.innerHTML = `
     <div class="lab-home">
       <div class="canh-khung">${canhPhongLab()}
-        <div class="hud-tren"><button class="phu nho" id="hoso">Hồ sơ</button><span class="logo-lab"></span><button class="am" id="giong" aria-label="Bật hoặc tắt giọng nói"></button><button class="am" id="am" aria-label="Bật hoặc tắt âm thanh"></button></div>
+        <div class="hud-tren"><button class="phu nho" id="hoso">Hồ sơ</button><button class="phu nho" id="ra-pho">Ra phố</button><span class="logo-lab"></span><button class="am" id="giong" aria-label="Bật hoặc tắt giọng nói"></button><button class="am" id="am" aria-label="Bật hoặc tắt âm thanh"></button></div>
       </div>
       <div class="quay-go">
         <button class="nut-cai" id="cai" hidden>${ic("cai")} Cài ứng dụng vào máy</button>
@@ -183,6 +202,7 @@ function manChu() {
       </div>
     </div>`;
   nutAm(); nutGiong();
+  $("#ra-pho").onclick = () => { Am.cham(); manPho(); };
   batParallax($(".canh-khung"));
   chaoVao();
   $("#tu-do").onclick = () => { Am.ting(); Giong.noi("Pha tự do"); manPha(monTuDo(), null, { tuDo: true }); };
@@ -854,7 +874,21 @@ function datHang(mon) {
 // Service worker (chạy offline): bật trên web thật; trên máy dev (localhost) chỉ bật khi thêm ?sw=1 để khỏi gặp bản cũ lúc sửa code.
 if ("serviceWorker" in navigator) {
   const dev = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-  if (!dev || location.search.includes("sw=1")) navigator.serviceWorker.register("sw.js").catch(() => {});
+  if (!dev || location.search.includes("sw=1")) {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+    // Có bản mới (service worker mới giành quyền khi trang đã chạy bằng bản cũ): nhắc tải lại, không tự tải lại giữa ván chơi
+    if (navigator.serviceWorker.controller) {
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (document.getElementById("ban-moi")) return;
+        const d = document.createElement("div");
+        d.id = "ban-moi"; d.setAttribute("role", "status");
+        d.innerHTML = '<span>Có bản mới (món/giá cập nhật)</span><button id="bm-tai">Tải lại</button><button id="bm-sau" class="phu" aria-label="Để sau">✕</button>';
+        document.body.appendChild(d);
+        d.querySelector("#bm-tai").onclick = () => location.reload();
+        d.querySelector("#bm-sau").onclick = () => d.remove();
+      });
+    }
+  }
   else navigator.serviceWorker.getRegistrations().then((rs) => rs.forEach((x) => x.unregister())).catch(() => {});
 }
 (async () => {
@@ -864,7 +898,7 @@ if ("serviceWorker" in navigator) {
     TK = thongKeTrinhDuyet(DL.cuaHang.goatcounter_ma || "");
     { const goc = tienTrinhTrong(), cu = luu.doc("tien_trinh", null) || {}; TT = { ...goc, ...cu, tk: { ...goc.tk, ...(cu.tk || {}) } }; }
     if (DL.cuaHang.mau_chu_dao) document.documentElement.style.setProperty("--chu-dao", DL.cuaHang.mau_chu_dao);
-    manChu();
+    if (/[?&]pho=0/.test(location.search)) manChu(); else manPho();
   } catch (e) {
     app.innerHTML = `<div class="loi-tai"><h2>Không tải được dữ liệu game</h2>
       <p>Chưa đọc được file <b>${e.message}</b>.</p>

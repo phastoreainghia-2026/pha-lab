@@ -233,3 +233,66 @@ em.su-co{display:inline-block}
 .so-ct-nd li.xong{color:var(--phu);text-decoration:line-through;opacity:.7}
 .so-ct-nd li.dang{font-weight:700;color:var(--chu-dao-dam);background:#fff3cd;border-radius:8px;margin-left:-6px;padding:2px 6px}
 .viec-ke{margin-top:6px;padding:6px 10px;background:#fff;border-left:4px solid var(--chu-dao);border-radius:0 8px 8px 0;font-size:14px}
+#ban-moi{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top));transform:translateX(-50%);z-index:60;display:flex;gap:10px;align-items:center;background:#2b2a33;color:#fff;padding:8px 10px 8px 16px;border-radius:999px;font-size:15px;max-width:94vw;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+#ban-moi button{font:inherit;font-weight:700;border:0;border-radius:999px;padding:6px 14px;background:#ff7a3d;color:#fff;cursor:pointer}
+#ban-moi button.phu{background:transparent;padding:6px 8px;color:#ccc}
+
+/* ===== Khu phố mở đầu (pho.js) ===== */
+body.pho{background:#16202a}
+body.pho #app{max-width:none;padding:0}
+body.pho #toast{bottom:calc(112px + env(safe-area-inset-bottom))}
+.ph-khung{--h:min(100vh,max(72vh,540px));--h:min(100svh,max(72svh,540px));position:relative;height:100vh;height:100svh;overflow:hidden;background:#16202a}
+.ph-cuon{height:100%;display:flex;align-items:center;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;overscroll-behavior-x:contain}
+.ph-cuon::-webkit-scrollbar{display:none}
+.ph-canh{display:inline-block;vertical-align:top;transform-origin:50% 60%}
+.ph-canh{flex:none}
+.ph-canh svg{display:block;height:var(--h);width:max(100vw,calc(var(--h) * 2))}
+.ph-khung.vao .ph-canh{transform:scale(2.7);opacity:0;transition:transform .65s cubic-bezier(.5,0,.9,.4),opacity .5s ease-in .15s}
+.ph-hud{position:fixed;top:calc(10px + env(safe-area-inset-top));left:10px;right:10px;display:flex;align-items:center;gap:8px;z-index:6}
+.ph-hud .logo-lab{flex:1;font-weight:900;font-size:21px;color:#fff;text-shadow:0 2px 8px #0009;letter-spacing:-.3px}
+.ph-hud button.am{width:44px;min-height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,.92);border:0}
+.ph-cta{position:fixed;left:0;right:0;bottom:calc(22px + env(safe-area-inset-bottom));z-index:6;text-align:center;display:flex;flex-direction:column;align-items:center;padding:0 12px;pointer-events:none}
+.ph-cta button{pointer-events:auto}
+.ph-cta button{font-size:19px;padding:15px 34px;border-radius:999px;box-shadow:0 8px 22px #0006,0 0 0 4px #fff8;animation:ph-xung 1.8s ease-in-out infinite}
+.ph-cta small{display:block;margin-top:8px;color:#fff;text-shadow:0 1px 6px #000c;font-weight:600}
+.bam{cursor:pointer}
+.ph-pha:hover,.ph-pha:focus-visible{filter:brightness(1.07)}
+.ph-pha:focus,.ph-lang:focus{outline:none}
+.ph-di{will-change:transform}
+.ph-di.phai{animation:ph-phai linear infinite}.ph-di.trai{animation:ph-trai linear infinite}
+.ph-bob{animation:ph-bob .6s ease-in-out infinite alternate}
+.ph-nguoi .chan{transform-box:fill-box;transform-origin:50% 0}
+.ph-nguoi .chan.a{animation:ph-buoc .6s ease-in-out infinite alternate}
+.ph-nguoi .chan.b{animation:ph-buoc .6s ease-in-out infinite alternate-reverse}
+.ph-rung{animation:ph-rung .16s linear infinite alternate}
+.ph-may{animation:ph-may linear infinite}
+.ph-chim-bay{animation:ph-chim linear infinite}
+.ph-canh-chim{transform-box:fill-box;transform-origin:50% 100%;animation:ph-vay .32s ease-in-out infinite alternate}
+.ph-sao{animation:ph-lap 3s ease-in-out infinite alternate}
+.ph-tan{transform-box:fill-box;transform-origin:50% 100%;animation:ph-gio 4.5s ease-in-out infinite alternate}
+.ph-bong.b0{animation:ph-nhay 1.1s steps(1) infinite}.ph-bong.b1{animation:ph-nhay 1.1s steps(1) infinite -.55s}
+.ph-bien-sang{animation:ph-sang 2.4s ease-in-out infinite alternate}
+.ph-goi-y{animation:ph-nay 1.1s ease-in-out infinite}
+.ph-lac-binh{transform-box:fill-box;transform-origin:50% 100%;animation:ph-lac .42s ease-in-out infinite alternate}
+.ph-co{transform-box:fill-box;transform-origin:50% 0;animation:ph-co 1.7s ease-in-out infinite alternate}
+.ph-khoi circle{transform-box:fill-box;transform-origin:50% 100%;opacity:0;animation:ph-khoi 3.2s linear infinite}
+.ph-khoi .k2{animation-delay:1s}.ph-khoi .k3{animation-delay:2s}
+.ph-den-xe{opacity:1}
+@keyframes ph-phai{from{transform:translateX(-300px)}to{transform:translateX(2100px)}}
+@keyframes ph-trai{from{transform:translateX(2100px)}to{transform:translateX(-300px)}}
+@keyframes ph-bob{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+@keyframes ph-buoc{from{transform:rotate(-26deg)}to{transform:rotate(26deg)}}
+@keyframes ph-rung{from{transform:translateY(0)}to{transform:translateY(-1.4px)}}
+@keyframes ph-may{from{transform:translateX(-340px)}to{transform:translateX(2100px)}}
+@keyframes ph-chim{from{transform:translateX(-120px)}to{transform:translateX(1900px)}}
+@keyframes ph-vay{from{transform:scaleY(1)}to{transform:scaleY(.3)}}
+@keyframes ph-lap{from{opacity:.25}to{opacity:1}}
+@keyframes ph-gio{from{transform:rotate(-1.8deg)}to{transform:rotate(1.8deg)}}
+@keyframes ph-nhay{0%,50%{opacity:1}50.1%,100%{opacity:.15}}
+@keyframes ph-sang{from{opacity:.93}to{opacity:1}}
+@keyframes ph-nay{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes ph-lac{from{transform:rotate(-20deg) translateY(2px)}to{transform:rotate(16deg) translateY(-3px)}}
+@keyframes ph-co{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+@keyframes ph-khoi{0%{opacity:0;transform:translateY(0) scale(.6)}25%{opacity:.75}100%{opacity:0;transform:translateY(-70px) scale(1.7)}}
+@keyframes ph-xung{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@media (prefers-reduced-motion:reduce){.ph-di,.ph-bob,.ph-nguoi .chan,.ph-rung,.ph-may,.ph-chim-bay,.ph-canh-chim,.ph-tan,.ph-bong,.ph-goi-y,.ph-lac-binh,.ph-co,.ph-khoi circle,.ph-cta button{animation:none}.ph-di{display:none}}

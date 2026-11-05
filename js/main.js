@@ -171,6 +171,7 @@ function manChu() {
           <button data-cd="tap_su" class="${cheDo === "tap_su" ? "bat" : ""}">Tập sự<br><small>có gợi ý</small></button>
           <button data-cd="thu_thach" class="${cheDo === "thu_thach" ? "bat" : ""}">Thử thách<br><small>không gợi ý, chấm chặt</small></button>
         </div>
+        <button class="nut-hd" id="huong-dan">Hướng dẫn 1 phút<small>Cách chơi, làm thử một ly ngay</small></button>
         <button class="nut-ca" id="mo-quay">Mở quầy · Khách gọi món<small>Ca ${DL.khach.so_khach} khách, có đồng hồ chờ${luu.doc("ca_cao", 0) ? " · Kỷ lục ca: " + luu.doc("ca_cao", 0) + " điểm" : ""}</small></button>
         <button class="nut-tu-do" id="tu-do">Pha tự do<small>Tự chọn nguyên liệu, game đoán đây là món nào</small></button>
         <p class="phu-tieu-lab">Chọn món để pha · ly ${DL.mon[0]?.ly.dung_tich_ml ?? ""}ml</p>
@@ -185,7 +186,11 @@ function manChu() {
   batParallax($(".canh-khung"));
   chaoVao();
   $("#tu-do").onclick = () => { Am.ting(); Giong.noi("Pha tự do"); manPha(monTuDo(), null, { tuDo: true }); };
-  $("#mo-quay").onclick = () => { $("#mo-quay").disabled = true; Am.ting(); Giong.noi("Mở quầy", { toiDa: 1500 }).then(batDauCa); };
+  $("#huong-dan").onclick = () => vaoHuongDan();
+  $("#mo-quay").onclick = () => {
+    if (!TT.da_huong_dan) { toast("Lần đầu chơi: xem hướng dẫn 1 phút trước khi mở quầy nhé"); return vaoHuongDan(); }
+    $("#mo-quay").disabled = true; Am.ting(); Giong.noi("Mở quầy", { toiDa: 1500 }).then(batDauCa);
+  };
   capNutCai();
   $("#cai").onclick = async () => {
     Am.cham();
@@ -513,7 +518,7 @@ function manPha(mon, ck = null, opt = {}) {
     if (opt.tuDo) manKetQuaTuDo(events, ly); else manKetQua(mon, events, ly, ck ? { ck, giayDung: (performance.now() - bd) / 1000, han, suCo } : null, opt);
   };
   capNhat();
-  if (!ck && !opt.tuDo && cheDo === "tap_su" && !TT.da_huong_dan && DL.huongDan?.buoc?.length) chayHuongDan();
+  if (!ck && !opt.tuDo && (opt.huongDan || !TT.da_huong_dan) && DL.huongDan?.buoc?.length) chayHuongDan();
   if (ck) { // đồng hồ chờ của khách: thanh co dần, mặt khách đổi theo tâm trạng, tích tắc khi sắp hết giờ
     let giayCuoi = -1, mat = "vui";
     timerKhach = setInterval(() => {
@@ -578,7 +583,7 @@ function manHoSo() {
       <p style="margin:0 0 8px;color:var(--phu);font-size:14px">Chép mã này để lưu, hoặc dán sang máy khác rồi bấm Khôi phục. Tiến trình hiện chỉ lưu trong trình duyệt của máy này.</p>
       <textarea id="ma-sao-luu" rows="3" placeholder="Mã sao lưu hiện ở đây, hoặc dán mã vào để khôi phục"></textarea>
       <div class="hang"><button class="nho" id="xuat-ma">Tạo và chép mã</button><button class="phu nho" id="nhap-ma">Khôi phục từ mã</button></div>
-      <div class="hang"><button class="phu nho" id="xem-lai-hd">Xem lại hướng dẫn mở đầu</button></div>
+      <div class="hang"><button class="phu nho" id="xem-lai-hd">Xem lại hướng dẫn 1 phút</button></div>
     </div>
     <p class="chan-lab" style="color:var(--phu)">Tiến trình lưu trong trình duyệt của máy này.</p>`;
   $("#ve").onclick = manChu;
@@ -595,7 +600,7 @@ function manHoSo() {
     TT = kq.goi.tt; luuTT(); luu.ghi("diem_cao", kq.goi.diem_cao); luu.ghi("ca_cao", kq.goi.ca_cao);
     Am.ting(); toast("Đã khôi phục tiến trình"); manHoSo();
   };
-  $("#xem-lai-hd").onclick = () => { TT.da_huong_dan = false; luuTT(); toast("Hướng dẫn sẽ hiện ở ván Tập sự kế tiếp"); };
+  $("#xem-lai-hd").onclick = () => vaoHuongDan();
 }
 
 // ======================================================= PHA TỰ DO
@@ -632,7 +637,13 @@ function manKetQuaTuDo(events, ly) {
   $("#lai").onclick = () => manPha(monTuDo(), null, { tuDo: true });
 }
 
-// ======================================================= HƯỚNG DẪN MỞ ĐẦU (ván Tập sự đầu tiên)
+// ======================================================= HƯỚNG DẪN MỞ ĐẦU
+// Tự hiện ở ván đầu tiên (mọi chế độ trừ ca), hoặc bấm nút "Hướng dẫn 1 phút" ở phòng lab / Hồ sơ.
+function vaoHuongDan() {
+  Am.ting();
+  if (cheDo !== "tap_su") { cheDoGoc = cheDo; cheDo = "tap_su"; } // học ở chế độ Tập sự cho có gợi ý
+  manPha(monMoKhoa(DL.mon, TT, DL.tt)[0].mon, null, { huongDan: true });
+}
 function chayHuongDan() {
   const buoc = DL.huongDan.buoc;
   let i = 0, cu = null;

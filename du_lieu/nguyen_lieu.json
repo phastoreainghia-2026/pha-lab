@@ -252,6 +252,34 @@
    "gia_von_don_vi": 20.7
   },
   {
+   "id": "goi_tra_dao",
+   "ten": "Gói trà đào",
+   "nhom": "khac",
+   "don_vi": "g",
+   "mau_hien_thi": "#d9c7a3",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [
+    {
+     "ma": "TRA_CZITGLDAO",
+     "ten": "Trà Cozy Ice Tea Hương Đào Gói Lẻ"
+    },
+    {
+     "ma": "TRA_TIENGVANGTRADAO",
+     "ten": "Trà Đào Tiếng Vang 24 Gói"
+    },
+    {
+     "ma": "TRA_TIENGVANGBIDAO",
+     "ten": "Trà Bí Đao Tiếng Vang 24 Gói"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
    "id": "kem_beo_rich",
    "ten": "Kem béo rich",
    "nhom": "sua",
@@ -370,6 +398,21 @@
      "ten": "Nước Cốt Chanh Thái QOA 700ml"
     }
    ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_cot_sa",
+   "ten": "Nước cốt sả",
+   "nhom": "khac",
+   "don_vi": "ml",
+   "mau_hien_thi": "#d9c7a3",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
    "gia_von_don_vi": null
   },
   {
@@ -621,6 +664,34 @@
    "tinh_gia": false,
    "sku": null,
    "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "siro_dao_torani",
+   "ten": "Siro đào Torani",
+   "nhom": "khac",
+   "don_vi": "ml",
+   "mau_hien_thi": "#d9c7a3",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [
+    {
+     "ma": "SR_GF520DAO",
+     "ten": "Siro GoldenFarm Đào 520ml"
+    },
+    {
+     "ma": "SR_TRN750DAO",
+     "ten": "Siro Torani Đào 750ml"
+    },
+    {
+     "ma": "3092712902007",
+     "ten": "SIRO CHANH TEISSEIRE CHAI 700G"
+    }
+   ],
    "gia_von_don_vi": null
   },
   {

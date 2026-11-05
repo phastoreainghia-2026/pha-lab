@@ -29,10 +29,12 @@ collections:
                   - { label: 'Bột matcha', value: 'bot_matcha' }
                   - { label: 'Cốt cà phê phin', value: 'cot_ca_phe_phin' }
                   - { label: 'Đường', value: 'duong' }
+                  - { label: 'Gói trà đào', value: 'goi_tra_dao' }
                   - { label: 'Kem béo rich', value: 'kem_beo_rich' }
                   - { label: 'Mứt hoa hồng', value: 'mut_hoa_hong' }
                   - { label: 'Nước cam vắt', value: 'nuoc_cam_vat' }
                   - { label: 'Nước cốt chanh vắt tươi', value: 'nuoc_cot_chanh_vat_tuoi' }
+                  - { label: 'Nước cốt sả', value: 'nuoc_cot_sa' }
                   - { label: 'Nước cốt tắc', value: 'nuoc_cot_tac' }
                   - { label: 'Nước cốt trà lài', value: 'nuoc_cot_tra_lai' }
                   - { label: 'Nước cốt trà sữa', value: 'nuoc_cot_tra_sua' }
@@ -42,6 +44,7 @@ collections:
                   - { label: 'Nước lọc/nước sôi', value: 'nuoc_loc_nuoc_soi' }
                   - { label: 'Nước trà đường', value: 'nuoc_tra_duong' }
                   - { label: 'Nước vải-chanh dây ngâm', value: 'nuoc_vai_chanh_day_ngam' }
+                  - { label: 'Siro đào Torani', value: 'siro_dao_torani' }
                   - { label: 'Sirup hạnh nhân', value: 'sirup_hanh_nhan' }
                   - { label: 'Sirup vải', value: 'sirup_vai' }
                   - { label: 'Sốt xoài xay', value: 'sot_xoai_xay' }
@@ -96,6 +99,7 @@ collections:
                 - { label: 'Cà phê hạnh nhân (bản đá)', value: 'm94' }
                 - { label: 'Matcha latte (bột kem béo)', value: 'm156' }
                 - { label: 'Công thức Trà Sữa Vải Hoa Hồng', value: 'm21' }
+                - { label: 'Công thức pha chế Trà Đào Cam Sả', value: 'm6' }
   - name: do_kho
     label: Độ khó
     files:

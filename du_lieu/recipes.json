@@ -2239,6 +2239,153 @@
     }
    ],
    "tang_me": null
+  },
+  {
+   "id": "m6",
+   "id_kho": 6,
+   "ten": "Công thức pha chế Trà Đào Cam Sả",
+   "nhom": "Khác",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nhi Vinbar",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://youtu.be/gYUS20HDzQc?si=Y8JdMuiMpNyF-QuL"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "nuoc_cot_sa",
+     "luong": 100,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "goi_tra_dao",
+     "luong": 1,
+     "don_vi": "g"
+    },
+    {
+     "nl": "siro_dao_torani",
+     "luong": 10,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_duong",
+     "luong": 5,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "da_vien",
+     "luong": 250,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Rót 100ml nước cốt sả",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_cot_sa",
+       "luong": 100,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Cho 1g gói trà đào túi lọc",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "goi_tra_dao",
+       "luong": 1,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Rót 10ml siro đào Torani",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "siro_dao_torani",
+       "luong": 10,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Rót 5ml nước đường",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_duong",
+       "luong": 5,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Khuấy đều",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Lát cam",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 7,
+     "hanh_dong": "Cho 250g đá viên",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da_vien",
+       "luong": 250,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 8,
+     "hanh_dong": "Trang trí cam/đào/sả",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    }
+   ],
+   "tang_me": null
   }
  ]
 }

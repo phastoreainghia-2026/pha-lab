@@ -1,0 +1,804 @@
+{
+ "schema_version": 1,
+ "nguyen_lieu": [
+  {
+   "id": "bot_kem_beo",
+   "ten": "Bột kem béo",
+   "nhom": "bot",
+   "don_vi": "g",
+   "mau_hien_thi": "#f6edd6",
+   "do_trong_duc": 0.9,
+   "dang": "bot",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP010390",
+    "ten": "Bột Béo Cao Cấp Hoàng Hải 1kg",
+    "gia_ban_sau_thue": 75600,
+    "quy_cach": 1000,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": ""
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP010390",
+     "ten": "Bột Béo Cao Cấp Hoàng Hải 1kg"
+    },
+    {
+     "ma": "SP001041",
+     "ten": "Bột Béo V-One 1Kg"
+    },
+    {
+     "ma": "SP001279",
+     "ten": "Bột Kem Béo Wao 1kg"
+    }
+   ],
+   "gia_von_don_vi": 75.6
+  },
+  {
+   "id": "bot_khoai_mon",
+   "ten": "Bột khoai môn",
+   "nhom": "bot",
+   "don_vi": "g",
+   "mau_hien_thi": "#b79cd9",
+   "do_trong_duc": 0.95,
+   "dang": "bot",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP001325",
+    "ten": "Bột Môn Tobee 500g",
+    "gia_ban_sau_thue": 97200,
+    "quy_cach": 500,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": ""
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP001325",
+     "ten": "Bột Môn Tobee 500g"
+    },
+    {
+     "ma": "BTS_MBGTP1KG",
+     "ten": "Bột Môn Gia Thịnh Phát (1 Gói = 1Kg)"
+    },
+    {
+     "ma": "SP000968",
+     "ten": "Bột Môn King 1kg"
+    }
+   ],
+   "gia_von_don_vi": 194.4
+  },
+  {
+   "id": "bot_matcha",
+   "ten": "Bột matcha",
+   "nhom": "bot",
+   "don_vi": "g",
+   "mau_hien_thi": "#86b85a",
+   "do_trong_duc": 0.95,
+   "dang": "bot",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP001345",
+    "ten": "Bột Matcha Neicha Cao Cấp 100gr",
+    "gia_ban_sau_thue": 102600,
+    "quy_cach": 100,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": ""
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP001345",
+     "ten": "Bột Matcha Cao Cấp 100gr"
+    },
+    {
+     "ma": "SP001275",
+     "ten": "Bột Matcha Cozy 200gr"
+    },
+    {
+     "ma": "SP001259",
+     "ten": "Bột Matcha Cozy 500g"
+    }
+   ],
+   "gia_von_don_vi": 1026.0
+  },
+  {
+   "id": "cot_ca_phe_phin",
+   "ten": "Cốt cà phê phin",
+   "nhom": "ca_phe",
+   "don_vi": "ml",
+   "mau_hien_thi": "#4a2b17",
+   "do_trong_duc": 0.95,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP000973",
+    "ten": "Cà Phê Voi Voi 500gr",
+    "gia_ban_sau_thue": 54000,
+    "quy_cach": 500,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "bột cà phê, chưa quy ra giá/ml cốt"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP001189",
+     "ten": "Cà Phê Muối"
+    },
+    {
+     "ma": "SP001201",
+     "ten": "Cà Phê Dừa"
+    },
+    {
+     "ma": "SP010429",
+     "ten": "Cà Phê Tân Di Linh 500gr"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "da",
+   "ten": "Đá",
+   "nhom": "da",
+   "don_vi": "g",
+   "mau_hien_thi": "#e8f6fb",
+   "do_trong_duc": 0.55,
+   "dang": "ran",
+   "mien_phi": true,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "da_lam_nguoi",
+   "ten": "Đá viên làm nguội hỗn hợp sữa",
+   "nhom": "da",
+   "don_vi": "g",
+   "mau_hien_thi": "#e8f6fb",
+   "do_trong_duc": 0.55,
+   "dang": "ran",
+   "mien_phi": true,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "da_trong_ly",
+   "ten": "Đá trong ly",
+   "nhom": "da",
+   "don_vi": "g",
+   "mau_hien_thi": "#e8f6fb",
+   "do_trong_duc": 0.55,
+   "dang": "ran",
+   "mien_phi": true,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "da_vien",
+   "ten": "Đá viên",
+   "nhom": "da",
+   "don_vi": "g",
+   "mau_hien_thi": "#e8f6fb",
+   "do_trong_duc": 0.55,
+   "dang": "ran",
+   "mien_phi": true,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "da_vien_nho",
+   "ten": "Đá viên nhỏ",
+   "nhom": "da",
+   "don_vi": "g",
+   "mau_hien_thi": "#e8f6fb",
+   "do_trong_duc": 0.55,
+   "dang": "ran",
+   "mien_phi": true,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "duong",
+   "ten": "Đường",
+   "nhom": "duong",
+   "don_vi": "ml",
+   "mau_hien_thi": "#ecd79c",
+   "do_trong_duc": 0.5,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP001065",
+    "ten": "Đường Cát Trắng (nấu nước đường tại cửa hàng)",
+    "gia_ban_sau_thue": 24840,
+    "quy_cach": 1200,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "Khải đo: 1kg đường + 700ml nước = 1,2 lít; giá 24.840đ/kg là giả định quy cách 1kg, cần xác nhận"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP010387",
+     "ten": "Chôm Chôm Ngâm Đường AA 565g"
+    },
+    {
+     "ma": "SP000408",
+     "ten": "Hạt Sen Ngâm Đường NIF"
+    },
+    {
+     "ma": "SP000558",
+     "ten": "Nước Đường Euro Deli"
+    }
+   ],
+   "gia_von_don_vi": 20.7
+  },
+  {
+   "id": "kem_beo_rich",
+   "ten": "Kem béo rich",
+   "nhom": "sua",
+   "don_vi": "ml",
+   "mau_hien_thi": "#faf1dc",
+   "do_trong_duc": 0.95,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP00157",
+    "ten": "Kem Béo Rich Lùn",
+    "gia_ban_sau_thue": 34560,
+    "quy_cach": 454,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "454g theo tên mã HĐ_RICHLUN"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "HĐ_RICHLUN",
+     "ten": "KEM BÉO THỰC VẬT RICH 454G"
+    },
+    {
+     "ma": "SP00157",
+     "ten": "Kem Béo Rich Lùn"
+    },
+    {
+     "ma": "SP001279",
+     "ten": "Bột Kem Béo Wao 1kg"
+    }
+   ],
+   "gia_von_don_vi": 76.1233
+  },
+  {
+   "id": "nuoc_am",
+   "ten": "Nước ấm 70-80°C",
+   "nhom": "nuoc",
+   "don_vi": "ml",
+   "mau_hien_thi": "#d6e9f2",
+   "do_trong_duc": 0.35,
+   "dang": "long",
+   "mien_phi": true,
+   "nong": true,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_cam_vat",
+   "ten": "Nước cam vắt",
+   "nhom": "nuoc_ep",
+   "don_vi": "ml",
+   "mau_hien_thi": "#f6a21d",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_cot_chanh_vat_tuoi",
+   "ten": "Nước cốt chanh vắt tươi",
+   "nhom": "khac",
+   "don_vi": "ml",
+   "mau_hien_thi": "#d9c7a3",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [
+    {
+     "ma": "SP000493",
+     "ten": "Nước Cốt Chanh Dây 1 Lít"
+    },
+    {
+     "ma": "SP000843",
+     "ten": "Nước Cốt Chanh Thái Lime 500ml"
+    },
+    {
+     "ma": "SP000510",
+     "ten": "Nước Cốt Chanh Thái QOA 700ml"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_cot_tac",
+   "ten": "Nước cốt tắc",
+   "nhom": "nuoc_ep",
+   "don_vi": "ml",
+   "mau_hien_thi": "#e7d86b",
+   "do_trong_duc": 0.6,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP010371",
+    "ten": "Nước Cốt Tắc Ohla",
+    "gia_ban_sau_thue": 64800,
+    "quy_cach": null,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "tên hàng không nêu dung tích"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP010371",
+     "ten": "Nước Cốt Tắc Ohla"
+    },
+    {
+     "ma": "SP000874",
+     "ten": "Nước Cốt Tắc Thái Lime 500ml"
+    },
+    {
+     "ma": "SP000493",
+     "ten": "Nước Cốt Chanh Dây 1 Lít"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_cot_tra_lai",
+   "ten": "Nước cốt trà lài",
+   "nhom": "tra",
+   "don_vi": "ml",
+   "mau_hien_thi": "#c99a45",
+   "do_trong_duc": 0.7,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP001301",
+    "ten": "Trà Lài Royal 500gr",
+    "gia_ban_sau_thue": 86400,
+    "quy_cach": 500,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "nguyên liệu trà, chưa quy ra giá/ml cốt"
+   },
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_cot_tra_sua_o_long",
+   "ten": "Nước cốt trà sữa ô long",
+   "nhom": "tra",
+   "don_vi": "ml",
+   "mau_hien_thi": "#d9c9a0",
+   "do_trong_duc": 0.9,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "TRA_XTOL",
+    "ten": "Trà Ô Long Xuân Thịnh",
+    "gia_ban_sau_thue": 172800,
+    "quy_cach": null,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "nguyên liệu trà, không nêu quy cách"
+   },
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_cot_tra_xanh",
+   "ten": "Nước cốt trà xanh",
+   "nhom": "tra",
+   "don_vi": "ml",
+   "mau_hien_thi": "#c99a45",
+   "do_trong_duc": 0.7,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP000772",
+    "ten": "Lục Trà Số 8 Dou Xian 500gr",
+    "gia_ban_sau_thue": 95040,
+    "quy_cach": 500,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "nguyên liệu trà, chưa quy ra giá/ml cốt"
+   },
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_duong",
+   "ten": "Nước đường",
+   "nhom": "duong",
+   "don_vi": "ml",
+   "mau_hien_thi": "#ecd79c",
+   "do_trong_duc": 0.5,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP001065",
+    "ten": "Đường Cát Trắng (nấu nước đường tại cửa hàng)",
+    "gia_ban_sau_thue": 24840,
+    "quy_cach": 1200,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "Khải đo: 1kg đường + 700ml nước = 1,2 lít; giá 24.840đ/kg là giả định quy cách 1kg, cần xác nhận"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP010387",
+     "ten": "Chôm Chôm Ngâm Đường AA 565g"
+    },
+    {
+     "ma": "SP000408",
+     "ten": "Hạt Sen Ngâm Đường NIF"
+    },
+    {
+     "ma": "SP000558",
+     "ten": "Nước Đường Euro Deli"
+    },
+    {
+     "ma": "SP000338",
+     "ten": "Đường Nước Pha Chế Hàn Quốc 25 kg"
+    },
+    {
+     "ma": "SP001164",
+     "ten": "Đường Nước Vargico 1,24 Lít"
+    },
+    {
+     "ma": "SP000609",
+     "ten": "Siro Maulin Ông Già Nước Đường Đen 1.3kg"
+    }
+   ],
+   "gia_von_don_vi": 20.7
+  },
+  {
+   "id": "nuoc_loc",
+   "ten": "Nước lọc",
+   "nhom": "nuoc",
+   "don_vi": "ml",
+   "mau_hien_thi": "#cfe6f2",
+   "do_trong_duc": 0.35,
+   "dang": "long",
+   "mien_phi": true,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_soi",
+   "ten": "Nước sôi",
+   "nhom": "nuoc",
+   "don_vi": "ml",
+   "mau_hien_thi": "#cfe6f2",
+   "do_trong_duc": 0.35,
+   "dang": "long",
+   "mien_phi": true,
+   "nong": true,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_tra_duong",
+   "ten": "Nước trà đường",
+   "nhom": "duong",
+   "don_vi": "ml",
+   "mau_hien_thi": "#ecd79c",
+   "do_trong_duc": 0.5,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [
+    {
+     "ma": "SP000558",
+     "ten": "Nước Đường Euro Deli"
+    },
+    {
+     "ma": "SP000609",
+     "ten": "Siro Maulin Ông Già Nước Đường Đen 1.3kg"
+    },
+    {
+     "ma": "SP000338",
+     "ten": "Đường Nước Pha Chế Hàn Quốc 25 kg"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "nuoc_vai_chanh_day_ngam",
+   "ten": "Nước vải-chanh dây ngâm",
+   "nhom": "nuoc_ep",
+   "don_vi": "ml",
+   "mau_hien_thi": "#f2d6cf",
+   "do_trong_duc": 0.6,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "sirup_hanh_nhan",
+   "ten": "Sirup hạnh nhân",
+   "nhom": "siro",
+   "don_vi": "ml",
+   "mau_hien_thi": "#e3c79b",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP000802",
+    "ten": "Siro Davinci Hạnh Nhân",
+    "gia_ban_sau_thue": 210600,
+    "quy_cach": null,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "ĐVT Chai, không nêu dung tích"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP000802",
+     "ten": "Siro Davinci Hạnh Nhân"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "sot_xoai_xay",
+   "ten": "Sốt xoài xay",
+   "nhom": "siro",
+   "don_vi": "ml",
+   "mau_hien_thi": "#ffbf2f",
+   "do_trong_duc": 0.95,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP010329",
+    "ten": "Sinh Tố Ohla Xoài 1Kg",
+    "gia_ban_sau_thue": 97200,
+    "quy_cach": 1000,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "Khải: sốt xoài dùng sinh tố hoặc mứt (mứt: SP010313 Mứt Chunky Xoài 1Kg 194.400đ)"
+   },
+   "sku_goi_y": [],
+   "gia_von_don_vi": 97.2
+  },
+  {
+   "id": "sua_dac",
+   "ten": "Sữa đặc",
+   "nhom": "sua",
+   "don_vi": "ml",
+   "mau_hien_thi": "#f4e7c3",
+   "do_trong_duc": 0.95,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP001339",
+    "ten": "Sữa Đặc Premier Gold 1kg",
+    "gia_ban_sau_thue": 41040,
+    "quy_cach": 1000,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "SP000923 Sữa Đặc ES không còn trong file KiotViet"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP000923",
+     "ten": "Sữa Đặc ES 1kg"
+    },
+    {
+     "ma": "SUA_SDLR",
+     "ten": "Sữa Đặc LaRosee"
+    },
+    {
+     "ma": "SP000455",
+     "ten": "Sữa Đặc Maika"
+    }
+   ],
+   "gia_von_don_vi": 41.04
+  },
+  {
+   "id": "sua_tuoi_khong_duong",
+   "ten": "Sữa tươi không đường",
+   "nhom": "sua",
+   "don_vi": "ml",
+   "mau_hien_thi": "#fbf7ee",
+   "do_trong_duc": 0.95,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP000318",
+    "ten": "Sữa Tươi Không Đường Vinamilk",
+    "gia_ban_sau_thue": 32400,
+    "quy_cach": null,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": "ĐVT Bịch, không nêu dung tích"
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP000318",
+     "ten": "Sữa Tươi Không Đường Vinamilk"
+    },
+    {
+     "ma": "SP001232",
+     "ten": "Sữa Tươi Khoai Môn Đường Đen (+thêm thạch)"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "syrup_dua_luoi",
+   "ten": "Syrup dưa lưới",
+   "nhom": "siro",
+   "don_vi": "ml",
+   "mau_hien_thi": "#a7dd8a",
+   "do_trong_duc": 0.8,
+   "dang": "long",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": true,
+   "sku": {
+    "ma": "SP010336",
+    "ten": "Siro Ohla Dưa Lưới Vàng 700ml",
+    "gia_ban_sau_thue": 64800,
+    "quy_cach": 700,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": ""
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP001101",
+     "ten": "Pudding BKB Vị Dưa Lưới 1kg"
+    },
+    {
+     "ma": "SP010419",
+     "ten": "Pudding DP 500g Dưa lưới"
+    },
+    {
+     "ma": "SP000226",
+     "ten": "Pudding Mole Dưa Lưới"
+    }
+   ],
+   "gia_von_don_vi": 92.5714
+  },
+  {
+   "id": "thach_dua_luoi",
+   "ten": "Thạch dưa lưới",
+   "nhom": "topping",
+   "don_vi": "miếng",
+   "mau_hien_thi": "#c9ecc3",
+   "do_trong_duc": 0.9,
+   "dang": "dem",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": null,
+   "sku_goi_y": [
+    {
+     "ma": "SP001101",
+     "ten": "Pudding BKB Vị Dưa Lưới 1kg"
+    },
+    {
+     "ma": "SP010419",
+     "ten": "Pudding DP 500g Dưa lưới"
+    },
+    {
+     "ma": "SP000226",
+     "ten": "Pudding Mole Dưa Lưới"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "vai",
+   "ten": "Vải",
+   "nhom": "topping",
+   "don_vi": "trái",
+   "mau_hien_thi": "#f5e9e4",
+   "do_trong_duc": 0.95,
+   "dang": "dem",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP001138",
+    "ten": "Vải Lon Hose 565g",
+    "gia_ban_sau_thue": 43200,
+    "quy_cach": 565,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": ""
+   },
+   "sku_goi_y": [
+    {
+     "ma": "SP000773",
+     "ten": "Inno Thạch Dừa Ruby Vải 2.2kg"
+    },
+    {
+     "ma": "SP010424",
+     "ten": "SP010367 Siro Ohla Vải 70"
+    },
+    {
+     "ma": "SP000625",
+     "ten": "Siro Davinci Vải 750ml"
+    }
+   ],
+   "gia_von_don_vi": null
+  },
+  {
+   "id": "xoai_ngam_mieng",
+   "ten": "Xoài ngâm miếng",
+   "nhom": "topping",
+   "don_vi": "miếng",
+   "mau_hien_thi": "#ffc93c",
+   "do_trong_duc": 0.95,
+   "dang": "dem",
+   "mien_phi": false,
+   "nong": false,
+   "tinh_gia": false,
+   "sku": {
+    "ma": "SP010341",
+    "ten": "Xoài Ohla Cắt Cục 650g",
+    "gia_ban_sau_thue": 59400,
+    "quy_cach": 650,
+    "chon_boi": "claude_tam_cho_khai_xac_nhan",
+    "ghi_chu": ""
+   },
+   "sku_goi_y": [],
+   "gia_von_don_vi": null
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "schema_version": 1,
+ "dung_sai": {
+  "tap_su": 0.1,
+  "thu_thach": 0.05,
+  "toi_thieu_don_vi": 1.0,
+  "ghi_chu": "±10% mỗi nguyên liệu; tối thiểu ±1 đơn vị để tay người chơi làm được"
+ },
+ "thao_tac": {
+  "can": {
+   "ten": "Cân",
+   "loai": "them",
+   "ho_tro": true
+  },
+  "rot": {
+   "ten": "Rót / đong",
+   "loai": "them",
+   "ho_tro": true
+  },
+  "do_da": {
+   "ten": "Cho đá",
+   "loai": "them",
+   "ho_tro": true
+  },
+  "rot_hon_hop": {
+   "am": "rot_hon_hop",
+   "ten": "Rót hỗn hợp",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": true
+  },
+  "khuay": {
+   "am": "khuay",
+   "ten": "Khuấy",
+   "loai": "hanh_dong",
+   "kieu": "vong",
+   "so_vong_toi_thieu": 6,
+   "hoa_tron": true,
+   "ho_tro": true
+  },
+  "lac": {
+   "am": "lac",
+   "ten": "Lắc",
+   "loai": "hanh_dong",
+   "kieu": "giu",
+   "giay_toi_thieu": 3,
+   "sai_so_thoi_gian": 0.3,
+   "hoa_tron": true,
+   "ho_tro": true
+  },
+  "danh_bot": {
+   "am": "danh_bot",
+   "ten": "Đánh bọt",
+   "loai": "hanh_dong",
+   "kieu": "giu",
+   "giay_toi_thieu": 5,
+   "sai_so_thoi_gian": 0.3,
+   "ho_tro": true
+  },
+  "dam": {
+   "am": "dam",
+   "ten": "Dầm",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": true
+  },
+  "nem": {
+   "am": "nem",
+   "ten": "Nếm",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": true
+  },
+  "trang_tri": {
+   "am": "rac",
+   "ten": "Trang trí / hoàn tất",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": true
+  },
+  "u_tra": {
+   "ten": "Ủ trà",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": false
+  },
+  "chiet": {
+   "ten": "Chiết",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": false
+  },
+  "cho_nguoi": {
+   "ten": "Để nguội",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": false
+  },
+  "chuan_bi": {
+   "ten": "Chuẩn bị",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": false
+  },
+  "nau": {
+   "ten": "Nấu",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": false
+  },
+  "vat": {
+   "ten": "Vắt",
+   "loai": "hanh_dong",
+   "kieu": "bam",
+   "ho_tro": false
+  }
+ }
+}

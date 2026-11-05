@@ -1,0 +1,109 @@
+backend:
+  name: github
+  repo: phastoreainghia-2026/pha-lab
+  branch: main
+media_folder: icons
+public_folder: /icons
+locale: vi
+collections:
+  - name: gia
+    label: Giá và mã hàng
+    files:
+      - name: gia_tuy_chinh
+        label: Giá nguyên liệu
+        file: du_lieu/gia_tuy_chinh.json
+        format: json
+        fields:
+          - label: Nguyên liệu
+            name: nguyen_lieu
+            widget: list
+            label_singular: nguyên liệu
+            summary: '{{fields.ten_hang}} · {{fields.gia_ban_sau_thue}}đ'
+            fields:
+              - label: Nguyên liệu
+                name: nguyen_lieu
+                widget: select
+                options:
+                  - { label: 'Bột kem béo', value: 'bot_kem_beo' }
+                  - { label: 'Bột khoai môn', value: 'bot_khoai_mon' }
+                  - { label: 'Bột matcha', value: 'bot_matcha' }
+                  - { label: 'Cốt cà phê phin', value: 'cot_ca_phe_phin' }
+                  - { label: 'Đường', value: 'duong' }
+                  - { label: 'Kem béo rich', value: 'kem_beo_rich' }
+                  - { label: 'Nước cam vắt', value: 'nuoc_cam_vat' }
+                  - { label: 'Nước cốt chanh vắt tươi', value: 'nuoc_cot_chanh_vat_tuoi' }
+                  - { label: 'Nước cốt tắc', value: 'nuoc_cot_tac' }
+                  - { label: 'Nước cốt trà lài', value: 'nuoc_cot_tra_lai' }
+                  - { label: 'Nước cốt trà sữa ô long', value: 'nuoc_cot_tra_sua_o_long' }
+                  - { label: 'Nước cốt trà xanh', value: 'nuoc_cot_tra_xanh' }
+                  - { label: 'Nước đường', value: 'nuoc_duong' }
+                  - { label: 'Nước trà đường', value: 'nuoc_tra_duong' }
+                  - { label: 'Nước vải-chanh dây ngâm', value: 'nuoc_vai_chanh_day_ngam' }
+                  - { label: 'Sirup hạnh nhân', value: 'sirup_hanh_nhan' }
+                  - { label: 'Sốt xoài xay', value: 'sot_xoai_xay' }
+                  - { label: 'Sữa đặc', value: 'sua_dac' }
+                  - { label: 'Sữa tươi không đường', value: 'sua_tuoi_khong_duong' }
+                  - { label: 'Syrup dưa lưới', value: 'syrup_dua_luoi' }
+                  - { label: 'Thạch dưa lưới', value: 'thach_dua_luoi' }
+                  - { label: 'Vải', value: 'vai' }
+                  - { label: 'Xoài ngâm miếng', value: 'xoai_ngam_mieng' }
+              - { label: Mã hàng (KiotViet), name: ma_hang, widget: string, required: false, hint: 'Để trống nghĩa là chưa có mã: món dùng nguyên liệu này sẽ hiện "chưa có giá"' }
+              - { label: Tên hàng, name: ten_hang, widget: string, required: false }
+              - { label: Giá bán sau thuế (đồng), name: gia_ban_sau_thue, widget: number, value_type: float, min: 0, required: false }
+              - { label: Quy cách (ml hoặc g trong một gói), name: quy_cach, widget: number, value_type: float, min: 0, required: false, hint: 'Phải cùng đơn vị với lượng dùng trong công thức (ml hoặc g)' }
+              - { label: Tính giá theo quy cách, name: tinh_gia, widget: boolean, default: true, hint: 'Tắt nếu quy cách khác đơn vị với lượng dùng (ví dụ gói trà tính bằng g nhưng công thức dùng ml)' }
+              - { label: Đã xác nhận mã hàng này, name: xac_nhan, widget: boolean, default: false }
+              - { label: Ghi chú, name: ghi_chu, widget: string, required: false }
+  - name: cua_hang
+    label: Cửa hàng
+    files:
+      - name: cua_hang_tuy_chinh
+        label: Liên hệ và giá bán gợi ý
+        file: du_lieu/cua_hang_tuy_chinh.json
+        format: json
+        fields:
+          - { label: Số Zalo của shop, name: zalo_so_dien_thoai, widget: string, required: false }
+          - { label: Link Messenger (https://m.me/...), name: messenger_link, widget: string, required: false }
+          - { label: Hệ số giá bán gợi ý (giá bán = chi phí nguyên liệu x hệ số), name: he_so_gia_ban_goi_y, widget: number, value_type: float, min: 0, required: false }
+  - name: thuc_don
+    label: Thực đơn
+    files:
+      - name: mon_tuy_chinh
+        label: Món bị ẩn khỏi game
+        file: du_lieu/mon_tuy_chinh.json
+        format: json
+        fields:
+          - label: Món bị ẩn
+            name: mon_an
+            widget: list
+            required: false
+            field:
+              label: Món
+              name: mon
+              widget: select
+              options:
+                - { label: 'Nước cam sữa', value: 'm253' }
+                - { label: 'Trà sữa khoai môn (đơn ly)', value: 'm289' }
+                - { label: 'Trà sữa ô long dưa lưới', value: 'm20' }
+                - { label: 'Trà xoài tươi', value: 'm100' }
+                - { label: 'Trà vải chanh dây', value: 'm51' }
+                - { label: 'Cà phê hạnh nhân (bản đá)', value: 'm94' }
+                - { label: 'Matcha latte (bột kem béo)', value: 'm156' }
+  - name: do_kho
+    label: Độ khó
+    files:
+      - name: can_bang_tuy_chinh
+        label: Khách gọi món và mở khóa món
+        file: du_lieu/can_bang_tuy_chinh.json
+        format: json
+        fields:
+          - { label: 'Số khách mỗi ca', name: so_khach, widget: number, value_type: int, min: 0, required: false, hint: 'Mặc định 5' }
+          - { label: 'Thời gian chờ cơ sở (giây)', name: thoi_gian_co_so, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 25' }
+          - { label: 'Cộng thêm mỗi bước (giây)', name: thoi_gian_moi_buoc, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 12' }
+          - { label: 'Hệ số thời gian chế độ Thử thách (0 đến 1,5)', name: he_so_thu_thach, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 0,8: ngắn hơn 20%' }
+          - { label: 'Báo động khi còn (giây)', name: canh_bao_giay, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 10' }
+          - { label: 'Điểm thưởng tối đa cho tốc độ', name: nhanh_toi_da, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 30' }
+          - { label: 'Điểm cộng mỗi bậc combo', name: combo_diem, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 10' }
+          - { label: 'Số món mở sẵn', name: so_mon_ban_dau, widget: number, value_type: int, min: 0, required: false, hint: 'Mặc định 3' }
+          - { label: 'Số sao cần thêm cho mỗi món khóa', name: sao_moi_mon, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 2' }
+          - { label: 'Điểm tối thiểu để xong thử thách hằng ngày (0 đến 100)', name: diem_toi_thieu_hang_ngay, widget: number, value_type: float, min: 0, required: false, hint: 'Mặc định 60' }

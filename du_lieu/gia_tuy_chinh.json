@@ -1,0 +1,166 @@
+{
+ "nguyen_lieu": [
+  {
+   "nguyen_lieu": "bot_kem_beo",
+   "ma_hang": "SP010390",
+   "ten_hang": "Bột Béo Cao Cấp Hoàng Hải 1kg",
+   "gia_ban_sau_thue": 75600,
+   "quy_cach": 1000,
+   "tinh_gia": true,
+   "ghi_chu": ""
+  },
+  {
+   "nguyen_lieu": "bot_khoai_mon",
+   "ma_hang": "SP001325",
+   "ten_hang": "Bột Môn Tobee 500g",
+   "gia_ban_sau_thue": 97200,
+   "quy_cach": 500,
+   "tinh_gia": true,
+   "ghi_chu": ""
+  },
+  {
+   "nguyen_lieu": "bot_matcha",
+   "ma_hang": "SP001345",
+   "ten_hang": "Bột Matcha Neicha Cao Cấp 100gr",
+   "gia_ban_sau_thue": 102600,
+   "quy_cach": 100,
+   "tinh_gia": true,
+   "ghi_chu": ""
+  },
+  {
+   "nguyen_lieu": "cot_ca_phe_phin",
+   "ma_hang": "SP000973",
+   "ten_hang": "Cà Phê Voi Voi 500gr",
+   "gia_ban_sau_thue": 54000,
+   "quy_cach": 500,
+   "tinh_gia": false,
+   "ghi_chu": "bột cà phê, chưa quy ra giá/ml cốt"
+  },
+  {
+   "nguyen_lieu": "duong",
+   "ma_hang": "SP001065",
+   "ten_hang": "Đường Cát Trắng (nấu nước đường tại cửa hàng)",
+   "gia_ban_sau_thue": 24840,
+   "quy_cach": 1200,
+   "tinh_gia": true,
+   "ghi_chu": "Khải đo: 1kg đường + 700ml nước = 1,2 lít; giá 24.840đ/kg là giả định quy cách 1kg, cần xác nhận"
+  },
+  {
+   "nguyen_lieu": "kem_beo_rich",
+   "ma_hang": "SP00157",
+   "ten_hang": "Kem Béo Rich Lùn",
+   "gia_ban_sau_thue": 34560,
+   "quy_cach": 454,
+   "tinh_gia": true,
+   "ghi_chu": "454g theo tên mã HĐ_RICHLUN"
+  },
+  {
+   "nguyen_lieu": "nuoc_cot_tac",
+   "ma_hang": "SP010371",
+   "ten_hang": "Nước Cốt Tắc Ohla",
+   "gia_ban_sau_thue": 64800,
+   "quy_cach": null,
+   "tinh_gia": false,
+   "ghi_chu": "tên hàng không nêu dung tích"
+  },
+  {
+   "nguyen_lieu": "nuoc_cot_tra_lai",
+   "ma_hang": "SP001301",
+   "ten_hang": "Trà Lài Royal 500gr",
+   "gia_ban_sau_thue": 86400,
+   "quy_cach": 500,
+   "tinh_gia": false,
+   "ghi_chu": "nguyên liệu trà, chưa quy ra giá/ml cốt"
+  },
+  {
+   "nguyen_lieu": "nuoc_cot_tra_sua_o_long",
+   "ma_hang": "TRA_XTOL",
+   "ten_hang": "Trà Ô Long Xuân Thịnh",
+   "gia_ban_sau_thue": 172800,
+   "quy_cach": null,
+   "tinh_gia": false,
+   "ghi_chu": "nguyên liệu trà, không nêu quy cách"
+  },
+  {
+   "nguyen_lieu": "nuoc_cot_tra_xanh",
+   "ma_hang": "SP000772",
+   "ten_hang": "Lục Trà Số 8 Dou Xian 500gr",
+   "gia_ban_sau_thue": 95040,
+   "quy_cach": 500,
+   "tinh_gia": false,
+   "ghi_chu": "nguyên liệu trà, chưa quy ra giá/ml cốt"
+  },
+  {
+   "nguyen_lieu": "nuoc_duong",
+   "ma_hang": "SP001065",
+   "ten_hang": "Đường Cát Trắng (nấu nước đường tại cửa hàng)",
+   "gia_ban_sau_thue": 24840,
+   "quy_cach": 1200,
+   "tinh_gia": true,
+   "ghi_chu": "Khải đo: 1kg đường + 700ml nước = 1,2 lít; giá 24.840đ/kg là giả định quy cách 1kg, cần xác nhận"
+  },
+  {
+   "nguyen_lieu": "sirup_hanh_nhan",
+   "ma_hang": "SP000802",
+   "ten_hang": "Siro Davinci Hạnh Nhân",
+   "gia_ban_sau_thue": 210600,
+   "quy_cach": null,
+   "tinh_gia": false,
+   "ghi_chu": "ĐVT Chai, không nêu dung tích"
+  },
+  {
+   "nguyen_lieu": "sot_xoai_xay",
+   "ma_hang": "SP010329",
+   "ten_hang": "Sinh Tố Ohla Xoài 1Kg",
+   "gia_ban_sau_thue": 97200,
+   "quy_cach": 1000,
+   "tinh_gia": true,
+   "ghi_chu": "Khải: sốt xoài dùng sinh tố hoặc mứt (mứt: SP010313 Mứt Chunky Xoài 1Kg 194.400đ)"
+  },
+  {
+   "nguyen_lieu": "sua_dac",
+   "ma_hang": "SP001339",
+   "ten_hang": "Sữa Đặc Premier Gold 1kg",
+   "gia_ban_sau_thue": 41040,
+   "quy_cach": 1000,
+   "tinh_gia": true,
+   "ghi_chu": "SP000923 Sữa Đặc ES không còn trong file KiotViet"
+  },
+  {
+   "nguyen_lieu": "sua_tuoi_khong_duong",
+   "ma_hang": "SP000318",
+   "ten_hang": "Sữa Tươi Không Đường Vinamilk",
+   "gia_ban_sau_thue": 32400,
+   "quy_cach": null,
+   "tinh_gia": false,
+   "ghi_chu": "ĐVT Bịch, không nêu dung tích"
+  },
+  {
+   "nguyen_lieu": "syrup_dua_luoi",
+   "ma_hang": "SP010336",
+   "ten_hang": "Siro Ohla Dưa Lưới Vàng 700ml",
+   "gia_ban_sau_thue": 64800,
+   "quy_cach": 700,
+   "tinh_gia": true,
+   "ghi_chu": ""
+  },
+  {
+   "nguyen_lieu": "vai",
+   "ma_hang": "SP001138",
+   "ten_hang": "Vải Lon Hose 565g",
+   "gia_ban_sau_thue": 43200,
+   "quy_cach": 565,
+   "tinh_gia": false,
+   "ghi_chu": ""
+  },
+  {
+   "nguyen_lieu": "xoai_ngam_mieng",
+   "ma_hang": "SP010341",
+   "ten_hang": "Xoài Ohla Cắt Cục 650g",
+   "gia_ban_sau_thue": 59400,
+   "quy_cach": 650,
+   "tinh_gia": false,
+   "ghi_chu": ""
+  }
+ ]
+}

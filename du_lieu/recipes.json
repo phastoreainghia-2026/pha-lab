@@ -1,0 +1,2105 @@
+{
+ "schema_version": 1,
+ "phien_ban": "duyet-1",
+ "mon": [
+  {
+   "id": "m258",
+   "id_kho": 258,
+   "ten": "Trà chanh",
+   "nhom": "Trà trái cây",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 700
+   },
+   "trang_thai": "tam_hoan_cho_quy_doi_size",
+   "nguon": {
+    "tac_gia": "Nắng Vào Bếp",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://www.youtube.com/@NắngVàoBếp"
+   },
+   "ngay_duyet": null,
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay",
+    "ra_loc",
+    "tui_loc_min",
+    "dao_thot_cat_lat_chanh"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "nuoc_tra_duong",
+     "luong": 250,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_cot_chanh_vat_tuoi",
+     "luong": 9,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "da_vien",
+     "luong": 200,
+     "don_vi": "g",
+     "luong_la_uoc": true
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Cho đá viên vào ly 700ml, khoảng 1/2 đến 2/3 ly",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da_vien",
+       "luong": 200,
+       "don_vi": "g",
+       "luong_la_uoc": true
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Rót khoảng 250ml nước trà đường đã nguội hoàn toàn",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Pha khi trà còn ấm: nguồn ghi nước trà phải nguội hoàn toàn để tránh chua gắt hoặc đắng",
+     "dung": [
+      {
+       "nl": "nuoc_tra_duong",
+       "luong": 250,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Cho 2 muỗng cà phê lưng (~9ml) nước cốt chanh vắt tươi",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Nước cốt chanh vắt sẵn quá 30 phút: nguồn ghi dễ đắng hoặc mất mùi",
+     "dung": [
+      {
+       "nl": "nuoc_cot_chanh_vat_tuoi",
+       "luong": 9,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Khuấy đều",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Trang trí lát chanh mỏng",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    }
+   ],
+   "tang_me": {
+    "mo_ta": "Nấu nước trà đường nền (tùy chọn, chế độ nâng cao)",
+    "nguyen_lieu": [
+     {
+      "ten": "Trà lài",
+      "luong": 12,
+      "don_vi": "g",
+      "goc_kho": "12g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010355",
+        "ten": "Lục Trà Lài Hoàng Gia 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000514",
+        "ten": "Lục Trà Lài Lộc Phát",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000518",
+        "ten": "Trà Lài Delite",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Trà túi lọc Lipton",
+      "luong": 1,
+      "don_vi": "gói",
+      "goc_kho": "1 gói",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP000468",
+        "ten": "Hồng Trà Túi Lọc Tam Mã",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "TRA_CZTLDAU",
+        "ten": "Trà Cozy Túi Lọc Hương Dâu",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "TRA_CZTLVAI",
+        "ten": "Trà Cozy Túi Lọc Hương Vải",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Đường cát trắng",
+      "luong": 250,
+      "don_vi": "g",
+      "goc_kho": "250g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP001065",
+        "ten": "Đường Cát Trắng",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000576",
+        "ten": "Đường Cát Bao 50kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Muối",
+      "luong": 0.25,
+      "don_vi": "muỗng cà phê nhỏ",
+      "goc_kho": "1/4 muỗng cà phê nhỏ",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010417",
+        "ten": "Bột Muối Biển DP 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000471",
+        "ten": "Bột Muối Biển Vani Eurodeli",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP001334",
+        "ten": "Bột Topping Kem Muối Biển 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước sôi",
+      "luong": 800,
+      "don_vi": "ml",
+      "goc_kho": "800ml",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     }
+    ],
+    "buoc": [
+     {
+      "thu_tu": 1,
+      "hanh_dong": "Ngâm chanh trong nước muối loãng khoảng 15 phút trước khi vắt; chọn quả căng bóng",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 900,
+      "loi_thuong_gap": "Không ngâm: nguồn ghi vỏ chanh còn vị the"
+     },
+     {
+      "thu_tu": 2,
+      "hanh_dong": "Trụng sơ trà lài và trà túi lọc với nước nóng",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 3,
+      "hanh_dong": "Ủ trà trong 800ml nước sôi 100°C đúng 30 phút",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 1800,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 4,
+      "hanh_dong": "Khi trà còn nóng, hòa 250g đường và muối, khuấy khoảng 1 phút (không cần đun lại)",
+      "thao_tac": "khuay",
+      "thoi_gian_giay": 60,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 5,
+      "hanh_dong": "Lọc qua rá và túi lọc mịn cho nước trà trong, không cặn",
+      "thao_tac": "chiet",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 6,
+      "hanh_dong": "Để nguội hoàn toàn trước khi pha ly",
+      "thao_tac": "cho_nguoi",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "m253",
+   "id_kho": 253,
+   "ten": "Nước cam sữa",
+   "nhom": "Nước ép",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nắng Vào Bếp",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://www.youtube.com/@NắngVàoBếp"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay",
+    "cay_thut_ca_phe_que_khuay_luoi",
+    "may_vat_cam"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "sua_dac",
+     "luong": 30,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_cam_vat",
+     "luong": 80,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "duong",
+     "luong": 10,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "da_vien_nho",
+     "luong": 250,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Đong 30ml sữa đặc vào ly",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "sua_dac",
+       "luong": 30,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Thêm 80ml nước cam vắt",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Vắt phạm vào phần vỏ: nước cam bị đắng",
+     "dung": [
+      {
+       "nl": "nuoc_cam_vat",
+       "luong": 80,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Cho 10ml đường (2 muỗng cà phê nhỏ)",
+     "thao_tac": "can",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "duong",
+       "luong": 10,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Khuấy bằng cây thụt cà phê (que khuấy dạng lưới) đến khi hỗn hợp màu cam nhạt đồng đều",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Nếm và gia giảm đường theo độ ngọt của cam",
+     "thao_tac": "nem",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Độ ngọt cam đổi theo từng mẻ cam",
+     "dung": []
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Cho đá viên nhỏ vào ly",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da_vien_nho",
+       "luong": 250,
+       "don_vi": "g"
+      }
+     ]
+    }
+   ],
+   "tang_me": {
+    "mo_ta": "Chuẩn bị cam và nước đường (tùy chọn)",
+    "nguyen_lieu": [
+     {
+      "ten": "Đường",
+      "luong": 1000,
+      "don_vi": "g",
+      "goc_kho": "1kg đường : 1 lít nước",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP000558",
+        "ten": "Nước Đường Euro Deli",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000609",
+        "ten": "Siro Maulin Ông Già Nước Đường Đen 1.3kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000338",
+        "ten": "Đường Nước Pha Chế Hàn Quốc 25 kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước (nấu nước đường)",
+      "luong": 1000,
+      "don_vi": "ml",
+      "goc_kho": null,
+      "ghi_chu": "theo tỷ lệ 1kg đường : 1 lít nước",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     }
+    ],
+    "buoc": [
+     {
+      "thu_tu": 1,
+      "hanh_dong": "Chọn cam bi vỏ bóng trơn, vỏ mỏng, cầm nặng tay; để 2-3 ngày sau khi mua cho ngọt hơn",
+      "thao_tac": "chuan_bi",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 2,
+      "hanh_dong": "Vắt cam bằng máy vắt, không vắt phạm vỏ; đeo găng khi vắt nhiều",
+      "thao_tac": "vat",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Vắt phạm vỏ: nước cam đắng"
+     },
+     {
+      "thu_tu": 3,
+      "hanh_dong": "Nấu nước đường 1kg đường : 1 lít nước đến khi đường tan hoàn toàn, để nguội, dùng trong vài ngày",
+      "thao_tac": "nau",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "m289",
+   "id_kho": 289,
+   "ten": "Trà sữa khoai môn (đơn ly)",
+   "nhom": "Trà sữa",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "AnhTrung Vlogs",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://www.youtube.com/@AnhTrungVlogs2021"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "cay_khuay_lon_cay_danh_trung_inox",
+    "binh_lac_shaker"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "bot_kem_beo",
+     "luong": 20,
+     "don_vi": "g"
+    },
+    {
+     "nl": "nuoc_duong",
+     "luong": 30,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_soi",
+     "luong": 80,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "bot_khoai_mon",
+     "luong": 20,
+     "don_vi": "g"
+    },
+    {
+     "nl": "nuoc_loc",
+     "luong": 40,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "da_vien",
+     "luong": 200,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Cân 20g bột kem béo và đong 30ml nước đường",
+     "thao_tac": "can",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "bot_kem_beo",
+       "luong": 20,
+       "don_vi": "g"
+      },
+      {
+       "nl": "nuoc_duong",
+       "luong": 30,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Rót 80ml nước sôi, khuấy đến tan hoàn toàn",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Khuấy chưa tan: bột bị vón cục",
+     "dung": [
+      {
+       "nl": "nuoc_soi",
+       "luong": 80,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Cân 20g bột khoai môn cho vào, tiếp tục khuấy đến khi tan hết",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Khuấy chưa tan: bột bị vón cục",
+     "dung": [
+      {
+       "nl": "bot_khoai_mon",
+       "luong": 20,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Thêm 40ml nước lọc để hạ nhiệt độ dung dịch",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_loc",
+       "luong": 40,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Cho 200g đá viên vào bình lắc và lắc đều",
+     "thao_tac": "lac",
+     "thoi_gian_giay": 5,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da_vien",
+       "luong": 200,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Đổ ra ly; có thể thêm topping trân châu, thạch hoặc pudding",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    }
+   ],
+   "tang_me": null
+  },
+  {
+   "id": "m20",
+   "id_kho": 20,
+   "ten": "Trà sữa ô long dưa lưới",
+   "nhom": "Trà sữa",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nhi Vinbar",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://youtu.be/gYUS20HDzQc?si=Y8JdMuiMpNyF-QuL"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay",
+    "binh_giu_nhiet",
+    "kep_vat_tui_tra",
+    "tui_vai_loc",
+    "binh_co_nap_van",
+    "binh_lac_shaker"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "nuoc_cot_tra_sua_o_long",
+     "luong": 150,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "syrup_dua_luoi",
+     "luong": 25,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "thach_dua_luoi",
+     "luong": 6,
+     "don_vi": "miếng"
+    },
+    {
+     "nl": "da",
+     "luong": 250,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Dùng 5ml syrup dưa lưới tráng viền ly",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "syrup_dua_luoi",
+       "luong": 5,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Cho 20ml syrup dưa lưới vào ly",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "syrup_dua_luoi",
+       "luong": 20,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Rót 150ml nước cốt trà sữa ô long vào giữa ly",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_cot_tra_sua_o_long",
+       "luong": 150,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Khuấy đều để lên màu xanh pastel",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Cho 250g đá, đậy nắp lắc đều",
+     "thao_tac": "lac",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da",
+       "luong": 250,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Thêm 6 miếng thạch dưa lưới lên trên",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "thach_dua_luoi",
+       "luong": 6,
+       "don_vi": "miếng"
+      }
+     ]
+    }
+   ],
+   "tang_me": {
+    "mo_ta": "Nấu nước cốt trà sữa ô long (làm sẵn, bảo quản mát tối đa 7 ngày, ngon nhất 3 ngày đầu)",
+    "nguyen_lieu": [
+     {
+      "ten": "Trà ô long",
+      "luong": 100,
+      "don_vi": "g",
+      "goc_kho": "100g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "TRA_LPCAM",
+        "ten": "Trà Cam Long Phú",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000215",
+        "ten": "Trà Long Phú Lúa Mạch",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "TRA_LPTX",
+        "ten": "Trà Xanh Long Phú",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước sôi",
+      "luong": 2500,
+      "don_vi": "ml",
+      "goc_kho": "2.5 lít",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Bột kem béo",
+      "luong": 400,
+      "don_vi": "g",
+      "goc_kho": "400g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010390",
+        "ten": "Bột Béo Cao Cấp Hoàng Hải 1kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP001041",
+        "ten": "Bột Béo V-One 1Kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP001279",
+        "ten": "Bột Kem Béo Wao 1kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Muối",
+      "luong": 2.5,
+      "don_vi": "ml",
+      "goc_kho": "2.5ml",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010417",
+        "ten": "Bột Muối Biển DP 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000471",
+        "ten": "Bột Muối Biển Vani Eurodeli",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP001334",
+        "ten": "Bột Topping Kem Muối Biển 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Sữa đặc",
+      "luong": 320,
+      "don_vi": "g",
+      "goc_kho": "320g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP000923",
+        "ten": "Sữa Đặc ES 1kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SUA_SDLR",
+        "ten": "Sữa Đặc LaRosee",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000455",
+        "ten": "Sữa Đặc Maika",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Đá bi",
+      "luong": 700,
+      "don_vi": "g",
+      "goc_kho": "700g",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     }
+    ],
+    "buoc": [
+     {
+      "thu_tu": 1,
+      "hanh_dong": "Cho 100g trà ô long vào túi vải lọc, buộc chặt",
+      "thao_tac": "chuan_bi",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 2,
+      "hanh_dong": "Ủ với 2.5 lít nước sôi trong bình giữ nhiệt 20 phút (nhiệt hạ về 95-98°C)",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 1200,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 3,
+      "hanh_dong": "Mở nắp, dầm túi trà 15-20 lần, dùng kẹp vắt kiệt túi trà",
+      "thao_tac": "dam",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 4,
+      "hanh_dong": "Khi còn nóng, cho 400g bột kem béo và 2.5ml muối khuấy tan, rồi cho 320g sữa đặc",
+      "thao_tac": "khuay",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 5,
+      "hanh_dong": "Làm nguội NGAY bằng 700g đá bi",
+      "thao_tac": "do_da",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Để nguội tự nhiên: hương trà bị bay mất"
+     },
+     {
+      "thu_tu": 6,
+      "hanh_dong": "Chiết vào bình có nắp vặn, ướp lạnh tối thiểu 4 tiếng trước khi dùng",
+      "thao_tac": "chiet",
+      "thoi_gian_giay": 14400,
+      "loi_thuong_gap": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "m100",
+   "id_kho": 100,
+   "ten": "Trà xoài tươi",
+   "nhom": "Trà trái cây",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nhi Vinbar",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://youtu.be/gYUS20HDzQc?si=Y8JdMuiMpNyF-QuL"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay",
+    "may_xay_sinh_to_xay_sot_xoai",
+    "hu_ngam",
+    "tui_loc_tra",
+    "binh_co_nap_kin"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "sot_xoai_xay",
+     "luong": 50,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "xoai_ngam_mieng",
+     "luong": 4,
+     "don_vi": "miếng",
+     "luong_toi_thieu": 3
+    },
+    {
+     "nl": "nuoc_cot_tac",
+     "luong": 12.5,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_duong",
+     "luong": 15,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_cot_tra_xanh",
+     "luong": 150,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "da",
+     "luong": 250,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Cho 50ml sốt xoài xay vào ly 500ml",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "sot_xoai_xay",
+       "luong": 50,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Cho 3-4 miếng xoài ngâm cục",
+     "thao_tac": "can",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "xoai_ngam_mieng",
+       "luong": 4,
+       "don_vi": "miếng",
+       "luong_toi_thieu": 3
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Thêm 12.5ml nước cốt tắc (2.5 muỗng cà phê)",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_cot_tac",
+       "luong": 12.5,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Thêm 15ml nước đường",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_duong",
+       "luong": 15,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Rót 150ml nước cốt trà xanh",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_cot_tra_xanh",
+       "luong": 150,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Cho đá gần đầy ly 500ml (~250g)",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da",
+       "luong": 250,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 7,
+     "hanh_dong": "Khuấy đều",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 8,
+     "hanh_dong": "Rắc chút muối lên mặt",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 9,
+     "hanh_dong": "Trang trí 3-4 miếng xoài ngâm cắt chéo",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    }
+   ],
+   "tang_me": {
+    "mo_ta": "Làm xoài ngâm (ủ 8 giờ) và nước cốt trà xanh",
+    "nguyen_lieu": [
+     {
+      "ten": "Cơm xoài",
+      "luong": 1000,
+      "don_vi": "g",
+      "goc_kho": "1kg",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Đường",
+      "luong": 300,
+      "don_vi": "g",
+      "goc_kho": "300g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010387",
+        "ten": "Chôm Chôm Ngâm Đường AA 565g",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP000408",
+        "ten": "Hạt Sen Ngâm Đường NIF",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP000558",
+        "ten": "Nước Đường Euro Deli",
+        "nguon": "đã liên kết với công thức này"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Muối",
+      "luong": 1,
+      "don_vi": "g",
+      "goc_kho": "1g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010417",
+        "ten": "Bột Muối Biển DP 500gr",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP000471",
+        "ten": "Bột Muối Biển Vani Eurodeli",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP001334",
+        "ten": "Bột Topping Kem Muối Biển 500gr",
+        "nguon": "đã liên kết với công thức này"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Trà xanh/trà lài lá nhuyễn",
+      "luong": 40,
+      "don_vi": "g",
+      "goc_kho": "40g",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước sôi",
+      "luong": 3000,
+      "don_vi": "ml",
+      "goc_kho": "3L",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Đá bi",
+      "luong": 1000,
+      "don_vi": "g",
+      "goc_kho": "1kg",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     }
+    ],
+    "buoc": [
+     {
+      "thu_tu": 1,
+      "hanh_dong": "Chọn xoài keo/tứ quý còn xanh giòn; rửa 2-3 nước, gọt vỏ, cắt lát dày ~3mm",
+      "thao_tac": "chuan_bi",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Dùng xoài chín: nhanh hỏng khi ngâm lâu"
+     },
+     {
+      "thu_tu": 2,
+      "hanh_dong": "Xếp xen kẽ từng lớp xoài - đường trong hũ: 1kg cơm xoài, 300g đường, 1g muối",
+      "thao_tac": "can",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 3,
+      "hanh_dong": "Ủ ở nhiệt độ thường 8 tiếng, không sên",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 28800,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 4,
+      "hanh_dong": "Chia đôi: một nửa xay nhuyễn làm sốt xoài, một nửa giữ miếng làm topping",
+      "thao_tac": "chuan_bi",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 5,
+      "hanh_dong": "Cho 40g trà vào túi lọc 2 lớp, buộc chặt; ủ với 3 lít nước sôi, dầm túi ~15 lần, đậy nắp 3-5 phút",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 240,
+      "loi_thuong_gap": "Túi lọc 1 lớp: rớt vụn trà"
+     },
+     {
+      "thu_tu": 6,
+      "hanh_dong": "Vớt túi, vắt kiệt, thêm 1kg đá bi hạ nhiệt nhanh (thu ~3.8 lít nước cốt)",
+      "thao_tac": "do_da",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 7,
+      "hanh_dong": "Chiết vào bình có nắp, bảo quản mát; dùng tốt nhất 3 ngày đầu, tối đa 5 ngày",
+      "thao_tac": "chiet",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     }
+    ]
+   }
+  },
+  {
+   "id": "m51",
+   "id_kho": 51,
+   "ten": "Trà vải chanh dây",
+   "nhom": "Trà trái cây",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nhi Vinbar",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://youtu.be/gYUS20HDzQc?si=Y8JdMuiMpNyF-QuL"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay",
+    "keo_tach_hat_vai",
+    "cay_khuay_dam_tra",
+    "binh_nhua_thuy_tinh"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "vai",
+     "luong": 2,
+     "don_vi": "trái"
+    },
+    {
+     "nl": "nuoc_duong",
+     "luong": 10,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_cot_tac",
+     "luong": 10,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_vai_chanh_day_ngam",
+     "luong": 50,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_cot_tra_lai",
+     "luong": 150,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "da",
+     "luong": 250,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Cho 2 trái vải vào ly, dầm nhẹ 5-7 lần",
+     "thao_tac": "dam",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "vai",
+       "luong": 2,
+       "don_vi": "trái"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Thêm 10ml nước đường",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_duong",
+       "luong": 10,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Thêm 10ml nước cốt tắc",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_cot_tac",
+       "luong": 10,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Thêm 50ml nước vải-chanh dây ngâm",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_vai_chanh_day_ngam",
+       "luong": 50,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Rót 150ml nước cốt trà lài",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_cot_tra_lai",
+       "luong": 150,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Khuấy đều",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 7,
+     "hanh_dong": "Thêm đá gần đầy ly",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da",
+       "luong": 250,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 8,
+     "hanh_dong": "Trang trí vài miếng vải và lá bạc hà",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    }
+   ],
+   "tang_me": {
+    "mo_ta": "Ngâm vải-chanh dây (8 giờ) và ủ trà lài nền",
+    "nguyen_lieu": [
+     {
+      "ten": "Nước cốt chanh dây",
+      "luong": 600,
+      "don_vi": "ml",
+      "goc_kho": "600ml",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP000493",
+        "ten": "Nước Cốt Chanh Dây 1 Lít",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000843",
+        "ten": "Nước Cốt Chanh Thái Lime 500ml",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000510",
+        "ten": "Nước Cốt Chanh Thái QOA 700ml",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Đường",
+      "luong": 600,
+      "don_vi": "g",
+      "goc_kho": "600g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010387",
+        "ten": "Chôm Chôm Ngâm Đường AA 565g",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000408",
+        "ten": "Hạt Sen Ngâm Đường NIF",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000558",
+        "ten": "Nước Đường Euro Deli",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Trà lài",
+      "luong": 40,
+      "don_vi": "g",
+      "goc_kho": "40g/mẻ",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010355",
+        "ten": "Lục Trà Lài Hoàng Gia 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000514",
+        "ten": "Lục Trà Lài Lộc Phát",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000518",
+        "ten": "Trà Lài Delite",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước sôi",
+      "luong": 3000,
+      "don_vi": "ml",
+      "goc_kho": "3L",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Đá bi",
+      "luong": 1000,
+      "don_vi": "g",
+      "goc_kho": "1kg",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Muối (trà nền)",
+      "luong": 7.5,
+      "don_vi": "ml",
+      "goc_kho": "7.5ml (~5g)",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010417",
+        "ten": "Bột Muối Biển DP 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000471",
+        "ten": "Bột Muối Biển Vani Eurodeli",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP001334",
+        "ten": "Bột Topping Kem Muối Biển 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     }
+    ],
+    "buoc": [
+     {
+      "thu_tu": 1,
+      "hanh_dong": "Sơ chế vải thiều cùi cứng: chà sạch vỏ, ngâm nước muối loãng 30 phút, rửa lại 2-3 lần, cắt cuống",
+      "thao_tac": "chuan_bi",
+      "thoi_gian_giay": 1800,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 2,
+      "hanh_dong": "Luộc sơ hơn nửa trái, tách hạt theo 3 đường cắt và rút hạt, giữ nguyên cùi; luộc tiếp phần vỏ cho chín",
+      "thao_tac": "nau",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Luộc chín hẳn ngay từ đầu: vỏ trơn khó thao tác"
+     },
+     {
+      "thu_tu": 3,
+      "hanh_dong": "Trộn cơm chanh dây với đường và chút muối, cho cùi vải vào, trộn nhẹ",
+      "thao_tac": "khuay",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Trộn mạnh: dập nát cùi vải"
+     },
+     {
+      "thu_tu": 4,
+      "hanh_dong": "Ngâm nhiệt độ thường 8 tiếng; bảo quản mát tối đa 7 ngày (ngon nhất 4-5 ngày đầu)",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 28800,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 5,
+      "hanh_dong": "Ủ trà lài 40g với 3 lít nước sôi (tổng 4 lít nước), dầm 15-20 lần, đậy nắp 20 phút, mở nắp dầm lại 15-20 lần",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 1200,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 6,
+      "hanh_dong": "Vắt bỏ túi, thêm 1kg đá bi và muối, khuấy tan; chiết ra bình khác, không giữ trong bình ủ",
+      "thao_tac": "chiet",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Giữ trà trong bình ủ sau khi nguội: nguồn lưu ý không nên"
+     }
+    ]
+   }
+  },
+  {
+   "id": "m94",
+   "id_kho": 94,
+   "ten": "Cà phê hạnh nhân (bản đá)",
+   "nhom": "Cà phê",
+   "cap_do": "nang_cao",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nhi Vinbar",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://youtu.be/gYUS20HDzQc?si=Y8JdMuiMpNyF-QuL"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay",
+    "phin_ca_phe",
+    "may_danh_bot_may_danh_sua"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "sirup_hanh_nhan",
+     "luong": 15,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "sua_tuoi_khong_duong",
+     "luong": 40,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_duong",
+     "luong": 5,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "kem_beo_rich",
+     "luong": 10,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "cot_ca_phe_phin",
+     "luong": 20,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "da",
+     "luong": 250,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Cho 15ml sirup hạnh nhân vào ly",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "sirup_hanh_nhan",
+       "luong": 15,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Thêm 40ml sữa tươi không đường",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "sua_tuoi_khong_duong",
+       "luong": 40,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Thêm 5ml nước đường",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "nuoc_duong",
+       "luong": 5,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Thêm 10ml kem béo rich",
+     "thao_tac": "rot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "kem_beo_rich",
+       "luong": 10,
+       "don_vi": "ml"
+      }
+     ]
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Trộn đều hỗn hợp",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Thêm 250g đá",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da",
+       "luong": 250,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 7,
+     "hanh_dong": "Đánh bọt nhẹ 20ml cốt cà phê đã nguội rồi đổ lên trên",
+     "thao_tac": "danh_bot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Dùng cốt còn nóng: làm tan đá, loãng vị",
+     "dung": [
+      {
+       "nl": "cot_ca_phe_phin",
+       "luong": 20,
+       "don_vi": "ml"
+      }
+     ]
+    }
+   ],
+   "tang_me": {
+    "mo_ta": "Pha cốt cà phê phin ủ 2 lần nước (nâng cao)",
+    "nguyen_lieu": [
+     {
+      "ten": "Bột cà phê rang đậm Robusta-Arabica",
+      "luong": 200,
+      "don_vi": "g",
+      "goc_kho": "200g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP001189",
+        "ten": "Cà Phê Muối",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP001201",
+        "ten": "Cà Phê Dừa",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP010429",
+        "ten": "Cà Phê Tân Di Linh 500gr",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Muối",
+      "luong": 0.5,
+      "don_vi": "ml",
+      "goc_kho": "0.5ml",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010417",
+        "ten": "Bột Muối Biển DP 500gr",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP000471",
+        "ten": "Bột Muối Biển Vani Eurodeli",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP001334",
+        "ten": "Bột Topping Kem Muối Biển 500gr",
+        "nguon": "đã liên kết với công thức này"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước sôi lần 1",
+      "luong": 400,
+      "don_vi": "ml",
+      "goc_kho": "400ml",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước sôi lần 2",
+      "luong": 450,
+      "don_vi": "ml",
+      "goc_kho": "450ml",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     }
+    ],
+    "buoc": [
+     {
+      "thu_tu": 1,
+      "hanh_dong": "Cho bột cà phê vào phin cùng chút muối; nén nhẹ tay cho bề mặt bột phẳng",
+      "thao_tac": "can",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Bề mặt không phẳng: nước thấm không đều, chiết xuất non"
+     },
+     {
+      "thu_tu": 2,
+      "hanh_dong": "Rót nước lần 1 (95-98°C) vào giữa phin, muỗng giữ nén không đè, đậy nắp ủ 1 phút",
+      "thao_tac": "rot",
+      "thoi_gian_giay": 60,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 3,
+      "hanh_dong": "Mở nắp, nhấn nhẹ cho thoát bọt khí, ủ thêm 5-7 phút cho bột nở đều",
+      "thao_tac": "u_tra",
+      "thoi_gian_giay": 360,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 4,
+      "hanh_dong": "Rót nước lần 2 đều lên bề mặt bột đã nở, ủ thêm 5-7 phút cho cốt chảy hết",
+      "thao_tac": "rot",
+      "thoi_gian_giay": 360,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 5,
+      "hanh_dong": "Để cốt cà phê nguội trước khi kết hợp đá hoặc sữa",
+      "thao_tac": "cho_nguoi",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": "Pha khi còn nóng: tan đá, loãng vị"
+     }
+    ]
+   }
+  },
+  {
+   "id": "m156",
+   "id_kho": 156,
+   "ten": "Matcha latte (bột kem béo)",
+   "nhom": "Trà sữa",
+   "cap_do": "co_ban",
+   "ly": {
+    "dung_tich_ml": 500
+   },
+   "trang_thai": "da_duyet",
+   "nguon": {
+    "tac_gia": "Nhi Vinbar",
+    "giay_phep_ghi_trong_kho": "giay_phep_mo",
+    "url_goc": "https://youtu.be/gYUS20HDzQc?si=Y8JdMuiMpNyF-QuL"
+   },
+   "ngay_duyet": "2026-11-05",
+   "dung_cu": [
+    "ly",
+    "can_dien_tu",
+    "ong_dong_jigger",
+    "muong_khuay",
+    "chasen_hoac_may_danh_bot",
+    "may_danh_kem_beo_du_tru",
+    "hop_chai_kin"
+   ],
+   "nguyen_lieu": [
+    {
+     "nl": "nuoc_am",
+     "luong": 100,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "bot_kem_beo",
+     "luong": 20,
+     "don_vi": "g"
+    },
+    {
+     "nl": "sua_dac",
+     "luong": 12.5,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "nuoc_duong",
+     "luong": 15,
+     "don_vi": "ml"
+    },
+    {
+     "nl": "bot_matcha",
+     "luong": 3,
+     "don_vi": "g"
+    },
+    {
+     "nl": "da_lam_nguoi",
+     "luong": 50,
+     "don_vi": "g"
+    },
+    {
+     "nl": "da_trong_ly",
+     "luong": 250,
+     "don_vi": "g"
+    }
+   ],
+   "buoc": [
+    {
+     "thu_tu": 1,
+     "hanh_dong": "Hòa 20g bột kem béo với 100ml nước ấm 70-80°C",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "bot_kem_beo",
+       "luong": 20,
+       "don_vi": "g"
+      },
+      {
+       "nl": "nuoc_am",
+       "luong": 100,
+       "don_vi": "ml"
+      }
+     ],
+     "vao": "coc"
+    },
+    {
+     "thu_tu": 2,
+     "hanh_dong": "Thêm 12.5ml sữa đặc và 15ml nước đường, khuấy đều thành hỗn hợp sữa béo",
+     "thao_tac": "khuay",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "sua_dac",
+       "luong": 12.5,
+       "don_vi": "ml"
+      },
+      {
+       "nl": "nuoc_duong",
+       "luong": 15,
+       "don_vi": "ml"
+      }
+     ],
+     "vao": "coc"
+    },
+    {
+     "thu_tu": 3,
+     "hanh_dong": "Tách khoảng 50ml hỗn hợp sữa béo, hòa 3g bột matcha: khuấy trước rồi đánh tan bằng chasen hoặc máy đánh bọt",
+     "thao_tac": "danh_bot",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Không hòa kỹ: matcha vón cục",
+     "dung": [
+      {
+       "nl": "bot_matcha",
+       "luong": 3,
+       "don_vi": "g"
+      }
+     ],
+     "vao": "coc"
+    },
+    {
+     "thu_tu": 4,
+     "hanh_dong": "Cho 5 viên đá (~50g) vào phần sữa béo còn lại để làm nguội",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "Không làm nguội: đổ vào ly đá sẽ làm đá tan nhanh",
+     "dung": [
+      {
+       "nl": "da_lam_nguoi",
+       "luong": 50,
+       "don_vi": "g"
+      }
+     ],
+     "vao": "coc"
+    },
+    {
+     "thu_tu": 5,
+     "hanh_dong": "Cho 250g đá vào ly",
+     "thao_tac": "do_da",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [
+      {
+       "nl": "da_trong_ly",
+       "luong": 250,
+       "don_vi": "g"
+      }
+     ]
+    },
+    {
+     "thu_tu": 6,
+     "hanh_dong": "Rót matcha đã hòa vào ly trước",
+     "thao_tac": "rot_hon_hop",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [],
+     "nhan": "matcha"
+    },
+    {
+     "thu_tu": 7,
+     "hanh_dong": "Rót nhẹ hỗn hợp sữa béo theo thành ly để tạo phân tầng",
+     "thao_tac": "rot_hon_hop",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": [],
+     "nhan": "sua_beo",
+     "phan_tang": true
+    },
+    {
+     "thu_tu": 8,
+     "hanh_dong": "Có thể thêm topping trân châu hoặc kem",
+     "thao_tac": "trang_tri",
+     "thoi_gian_giay": null,
+     "loi_thuong_gap": "",
+     "dung": []
+    }
+   ],
+   "tang_me": {
+    "mo_ta": "Kem béo dự trữ (nguồn không nói rõ dùng ở bước nào của ly)",
+    "nguyen_lieu": [
+     {
+      "ten": "Nước lọc",
+      "luong": 300,
+      "don_vi": "ml",
+      "goc_kho": "300ml",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Bột kem béo",
+      "luong": 250,
+      "don_vi": "g",
+      "goc_kho": "250g",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP001279",
+        "ten": "Bột Kem Béo Wao 1kg",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP010390",
+        "ten": "Bột Béo Cao Cấp Hoàng Hải 1kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP001041",
+        "ten": "Bột Béo V-One 1Kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Đường/hương vani",
+      "luong": 80,
+      "don_vi": "g",
+      "goc_kho": "80g",
+      "ghi_chu": "",
+      "sku_goi_y": [],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Muối",
+      "luong": 1,
+      "don_vi": "ml",
+      "goc_kho": "1ml",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP010417",
+        "ten": "Bột Muối Biển DP 500gr",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP000471",
+        "ten": "Bột Muối Biển Vani Eurodeli",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP001334",
+        "ten": "Bột Topping Kem Muối Biển 500gr",
+        "nguon": "đã liên kết với công thức này"
+       }
+      ],
+      "sku_da_chon": null
+     },
+     {
+      "ten": "Nước đường",
+      "luong": 40,
+      "don_vi": "ml",
+      "goc_kho": "40ml",
+      "ghi_chu": "",
+      "sku_goi_y": [
+       {
+        "ma": "SP000558",
+        "ten": "Nước Đường Euro Deli",
+        "nguon": "đã liên kết với công thức này"
+       },
+       {
+        "ma": "SP000609",
+        "ten": "Siro Maulin Ông Già Nước Đường Đen 1.3kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       },
+       {
+        "ma": "SP000338",
+        "ten": "Đường Nước Pha Chế Hàn Quốc 25 kg",
+        "nguon": "tìm theo tên trong toàn kho"
+       }
+      ],
+      "sku_da_chon": null
+     }
+    ],
+    "buoc": [
+     {
+      "thu_tu": 1,
+      "hanh_dong": "Trộn nước lọc, bột kem béo, đường, muối và hương vani theo định lượng, cho vào máy đánh",
+      "thao_tac": "khuay",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 2,
+      "hanh_dong": "Đánh tốc độ mạnh nhất 1.5-2 phút đến khi đặc hơn sữa đặc khoảng 20%",
+      "thao_tac": "danh_bot",
+      "thoi_gian_giay": 120,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 3,
+      "hanh_dong": "Chuyển tốc độ nhẹ (mức 3) đánh thêm 2 phút để phá bọt khí",
+      "thao_tac": "danh_bot",
+      "thoi_gian_giay": 120,
+      "loi_thuong_gap": ""
+     },
+     {
+      "thu_tu": 4,
+      "hanh_dong": "Chiết vào hộp/chai kín, ngăn mát 3-5 ngày (ngon nhất 3 ngày đầu)",
+      "thao_tac": "chiet",
+      "thoi_gian_giay": null,
+      "loi_thuong_gap": ""
+     }
+    ]
+   },
+   "hon_hop": {
+    "matcha": {
+     "ten": "Matcha đã hòa",
+     "ml": 50,
+     "mau_hien_thi": "#7fae52",
+     "do_trong_duc": 0.95
+    },
+    "sua_beo": {
+     "ten": "Hỗn hợp sữa béo",
+     "ml": 77.5,
+     "mau_hien_thi": "#f6ecd2",
+     "do_trong_duc": 0.95
+    }
+   }
+  }
+ ]
+}

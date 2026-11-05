@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "ghi_chu": "Tiến trình người chơi: mở khóa món bằng sao, hạng theo XP, chuỗi ngày, huy hiệu, thử thách hằng ngày. Sửa số liệu ở đây, không cần sửa code. Tiến trình lưu trong trình duyệt của từng người chơi.",
+ "so_mon_ban_dau": 3,
+ "sao_moi_mon": 2,
+ "xp": {"moi_ly_diem_chia": 10, "moi_sao": 5, "ca_diem_chia": 10, "thu_thach_ngay_nhan": 2},
+ "hang_ngay": {"diem_toi_thieu": 60},
+ "hang": [
+  {"ten": "Tập sự", "xp": 0},
+  {"ten": "Phụ pha chế", "xp": 100},
+  {"ten": "Pha chế viên", "xp": 300},
+  {"ten": "Bartender", "xp": 700},
+  {"ten": "Bậc thầy", "xp": 1500}
+ ],
+ "huy_hieu": [
+  {"id": "ly_dau", "ten": "Ly đầu tiên", "mo_ta": "Pha xong một ly", "loai": "so_ly", "so": 1},
+  {"id": "muoi_ly", "ten": "Tay quen việc", "mo_ta": "Pha 10 ly", "loai": "so_ly", "so": 10},
+  {"id": "nam_muoi_ly", "ten": "Người của quầy", "mo_ta": "Pha 50 ly", "loai": "so_ly", "so": 50},
+  {"id": "hoan_hao", "ten": "Hoàn hảo", "mo_ta": "Đạt 100 điểm chính xác", "loai": "hoan_hao", "so": 1},
+  {"id": "ba_sao_dau", "ten": "Ba sao đầu tiên", "mo_ta": "Được 3 sao ở một món", "loai": "mon_ba_sao", "so": 1},
+  {"id": "ba_sao_ba", "ten": "Thuộc lòng", "mo_ta": "Được 3 sao ở 3 món", "loai": "mon_ba_sao", "so": 3},
+  {"id": "ba_sao_het", "ten": "Bậc thầy thực đơn", "mo_ta": "Được 3 sao ở mọi món", "loai": "mon_ba_sao_het"},
+  {"id": "mo_het", "ten": "Mở khóa tất cả", "mo_ta": "Mở khóa mọi món", "loai": "mo_het_mon"},
+  {"id": "thu_thach_3", "ten": "Không cần gợi ý", "mo_ta": "3 sao ở chế độ Thử thách", "loai": "thu_thach_3sao", "so": 1},
+  {"id": "ca_dau", "ten": "Ca đầu tiên", "mo_ta": "Hoàn thành một ca Khách gọi món", "loai": "ca_xong", "so": 1},
+  {"id": "ca_hang3", "ten": "Quán đông khách", "mo_ta": "Đạt hạng 3 sao ở một ca", "loai": "ca_hang3", "so": 1},
+  {"id": "khong_bo_di", "ten": "Không ai bỏ đi", "mo_ta": "Một ca không có khách nào bỏ đi", "loai": "ca_khong_bo_di", "so": 1},
+  {"id": "combo3", "ten": "Chuỗi hài lòng", "mo_ta": "Combo x3 trong một ca", "loai": "combo", "so": 3},
+  {"id": "nhanh", "ten": "Tay nhanh", "mo_ta": "Khách rất hài lòng khi giao nhanh", "loai": "nhanh_3sao", "so": 1},
+  {"id": "chuoi3", "ten": "Ba ngày liền", "mo_ta": "Chơi 3 ngày liên tiếp", "loai": "chuoi_ngay", "so": 3},
+  {"id": "chuoi7", "ten": "Một tuần chăm chỉ", "mo_ta": "Chơi 7 ngày liên tiếp", "loai": "chuoi_ngay", "so": 7},
+  {"id": "hang_ngay", "ten": "Thử thách ngày", "mo_ta": "Hoàn thành thử thách hằng ngày", "loai": "hang_ngay", "so": 1}
+ ]
+}

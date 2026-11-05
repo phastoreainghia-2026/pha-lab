@@ -1,0 +1,14 @@
+{
+ "schema_version": 1,
+ "nguon": "Khải cung cấp / cân thực tế tại cửa hàng, 2026-11-05",
+ "quyet_dinh": "Chỉ làm 1 size: M = 500ml (Khải quyết định 2026-11-05)",
+ "co_ly_ml": 500,
+ "da_gan_day_ly_g": 250,
+ "ghi_chu_chua_dung": "Size L 700ml: đá gần đầy ly = 350g - chưa dùng trong bản đầu",
+ "nuoc_duong": {
+  "cong_thuc": "1kg đường + 700ml nước",
+  "thanh_pham_ml": 1200,
+  "do_boi": "Khải 2026-11-05",
+  "g_duong_tren_ml": 0.833
+ }
+}

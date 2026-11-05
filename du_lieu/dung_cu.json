@@ -1,0 +1,113 @@
+{
+ "schema_version": 1,
+ "dung_cu": [
+  {
+   "id": "binh_co_nap_kin",
+   "ten": "Bình có nắp kín"
+  },
+  {
+   "id": "binh_co_nap_van",
+   "ten": "Bình có nắp vặn"
+  },
+  {
+   "id": "binh_giu_nhiet",
+   "ten": "Bình giữ nhiệt"
+  },
+  {
+   "id": "binh_lac_shaker",
+   "ten": "Bình lắc (shaker)"
+  },
+  {
+   "id": "binh_nhua_thuy_tinh",
+   "ten": "Bình nhựa/thủy tinh"
+  },
+  {
+   "id": "can_dien_tu",
+   "ten": "Cân điện tử"
+  },
+  {
+   "id": "cay_khuay_dam_tra",
+   "ten": "Cây khuấy dầm trà"
+  },
+  {
+   "id": "cay_khuay_lon_cay_danh_trung_inox",
+   "ten": "Cây khuấy lớn (cây đánh trứng inox)"
+  },
+  {
+   "id": "cay_thut_ca_phe_que_khuay_luoi",
+   "ten": "Cây thụt cà phê (que khuấy lưới)"
+  },
+  {
+   "id": "chasen_hoac_may_danh_bot",
+   "ten": "Chasen hoặc máy đánh bọt"
+  },
+  {
+   "id": "dao_thot_cat_lat_chanh",
+   "ten": "Dao, thớt (cắt lát chanh)"
+  },
+  {
+   "id": "hop_chai_kin",
+   "ten": "Hộp/chai kín"
+  },
+  {
+   "id": "hu_ngam",
+   "ten": "Hũ ngâm"
+  },
+  {
+   "id": "keo_tach_hat_vai",
+   "ten": "Kéo (tách hạt vải)"
+  },
+  {
+   "id": "kep_vat_tui_tra",
+   "ten": "Kẹp vắt túi trà"
+  },
+  {
+   "id": "ly",
+   "ten": "Ly"
+  },
+  {
+   "id": "may_danh_bot_may_danh_sua",
+   "ten": "Máy đánh bọt / máy đánh sữa"
+  },
+  {
+   "id": "may_danh_kem_beo_du_tru",
+   "ten": "Máy đánh (kem béo dự trữ)"
+  },
+  {
+   "id": "may_vat_cam",
+   "ten": "Máy vắt cam"
+  },
+  {
+   "id": "may_xay_sinh_to_xay_sot_xoai",
+   "ten": "Máy xay sinh tố (xay sốt xoài)"
+  },
+  {
+   "id": "muong_khuay",
+   "ten": "Muỗng khuấy"
+  },
+  {
+   "id": "ong_dong_jigger",
+   "ten": "Ống đong / jigger"
+  },
+  {
+   "id": "phin_ca_phe",
+   "ten": "Phin cà phê"
+  },
+  {
+   "id": "ra_loc",
+   "ten": "Rá lọc"
+  },
+  {
+   "id": "tui_loc_min",
+   "ten": "Túi lọc mịn"
+  },
+  {
+   "id": "tui_loc_tra",
+   "ten": "Túi lọc trà"
+  },
+  {
+   "id": "tui_vai_loc",
+   "ten": "Túi vải lọc"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "schema_version": 1,
+ "ghi_chu": "Lời thoại cố định của giọng nói. nguon = vieneu (chạy ngay trên máy, giọng nam miền Trung 'Quang Sơn' như App Video Ngắn) hoặc edge (cần mạng). Đổi giọng: sửa 'giong' (ví dụ Xuân Vĩnh, Phạm Tuyên, Thái Sơn, Đức Trí, Adam) rồi chạy python tao_giong.py. Nghe thử các giọng: python tao_giong.py --thu. Câu theo món/nguyên liệu/bước được tạo tự động từ dữ liệu.",
+ "nguon": "vieneu",
+ "giong": "Phạm Tuyên",
+ "edge": {
+  "giong": "vi-VN-NamMinhNeural",
+  "toc_do": "+4%"
+ },
+ "chao": [
+  "Chào mừng bạn đến với phòng Pha Lab của Pha Store! Hôm nay mình cùng pha chế nhé.",
+  "Xin chào! Phòng Pha Lab đã sẵn sàng. Chọn một món để bắt đầu nào!"
+ ],
+ "chon_mon": "Món {mon}. Bắt đầu nào!",
+ "khach_goi": "Cho mình một {mon} nhé!",
+ "khach_bo_di": "Khách chờ lâu quá, bỏ đi mất rồi!",
+ "khach_ket_qua": {
+  "0": "Khách không hài lòng.",
+  "1": "Khách tạm hài lòng.",
+  "2": "Khách hài lòng!",
+  "3": "Khách rất hài lòng, còn để lại tiền boa nữa!"
+ },
+ "ket_ca": {
+  "0": "Hết ca rồi. Mai mình làm tốt hơn nhé!",
+  "1": "Hết ca rồi. Cũng tạm ổn, cố lên nhé!",
+  "2": "Hết ca rồi. Làm tốt lắm!",
+  "3": "Hết ca rồi. Xuất sắc, quán đông khách luôn!"
+ },
+ "len_hang": "Chúc mừng, bạn lên hạng {hang}!",
+ "mo_khoa_mon": "Mở khóa món mới: {mon}",
+ "thu_thach_ngay": "Thử thách hôm nay: {mon}",
+ "ket_qua": {
+  "0": "Chưa được rồi, mình thử lại nhé!",
+  "1": "Cũng được đấy, luyện thêm chút nữa nhé!",
+  "2": "Khá lắm! Gần chuẩn rồi đó.",
+  "3": "Tuyệt vời! Chuẩn bartender luôn!"
+ },
+ "khac": [
+  "Làm lại ly",
+  "Pha xong",
+  "Đã đủ các bước. Bấm Pha xong để chấm điểm!",
+  "Chưa rót gì cả",
+  "Giữ nút lâu hơn nhé",
+  "Chưa khuấy vòng nào",
+  "Chế độ Tập sự",
+  "Chế độ Thử thách",
+  "Mở quầy",
+  "Khách tiếp theo",
+  "Tổng kết ca",
+  "Bạn vừa nhận huy hiệu mới!",
+  "Hoàn thành thử thách hôm nay!",
+  "Hồ sơ của bạn"
+ ]
+}

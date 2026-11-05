@@ -1,0 +1,9 @@
+{
+ "schema_version": 1,
+ "ghi_chu": "Chế độ Khách gọi món (một 'ca' gồm nhiều khách). Sửa số liệu ở đây, không cần sửa code.",
+ "so_khach": 5,
+ "thoi_gian": {"co_so": 25, "moi_buoc": 12, "he_so_thu_thach": 0.8, "canh_bao_giay": 10},
+ "moc_toc_do": [0.34, 0.67],
+ "diem": {"nhanh_toi_da": 30, "combo": 10, "sao_toi_thieu_cho_combo": 2},
+ "tam_trang": {"vui_tren": 0.6, "binh_thuong_tren": 0.3}
+}

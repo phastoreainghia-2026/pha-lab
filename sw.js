@@ -2,7 +2,7 @@
 // - Vỏ ứng dụng (html/css/js/icon): lưu sẵn khi cài, luôn trả từ bộ nhớ rồi âm thầm cập nhật.
 // - Dữ liệu (du_lieu/*.json): ưu tiên mạng để thấy giá/mã hàng mới nhất, mất mạng thì dùng bản đã lưu.
 // Đổi nội dung code: tăng PHIEN_BAN để máy người chơi tải lại toàn bộ.
-const PHIEN_BAN = "pha-lab-68eeda0341";
+const PHIEN_BAN = "pha-lab-db1a426199";
 const VO = ["./", "index.html", "style.css", "manifest.webmanifest", "js/main.js", "js/score.js", "js/glass.js", "js/share.js", "js/lab.js", "js/am_thanh.js", "js/giong.js", "js/khach.js", "js/tien_trinh.js", "js/hieu_ung.js", "js/thong_ke.js", "js/gia.js", "js/icon.js", "fonts/be-vietnam-pro-latin-500-normal.woff2", "fonts/be-vietnam-pro-latin-700-normal.woff2", "fonts/be-vietnam-pro-latin-800-normal.woff2", "fonts/be-vietnam-pro-vietnamese-500-normal.woff2", "fonts/be-vietnam-pro-vietnamese-700-normal.woff2", "fonts/be-vietnam-pro-vietnamese-800-normal.woff2", "fonts/OFL.txt", "js/vendor/confetti.min.js", "giong/index.json",
   "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png", "icons/apple-touch-icon.png"];
 const DU_LIEU = ["nguyen_lieu", "dung_cu", "thao_tac", "recipes", "hang_so_cua_hang", "cau_hinh_cua_hang", "game_cau_hinh", "giong_cau", "che_do_khach", "tien_trinh", "su_co", "huong_dan", "gia_tuy_chinh", "cua_hang_tuy_chinh", "mon_tuy_chinh", "can_bang_tuy_chinh", "log_chua_ho_tro"]

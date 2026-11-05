@@ -257,6 +257,12 @@ function manPha(mon, ck = null, opt = {}) {
           : `<div class="ten-mon">${mon.ten} · ${cheDo === "tap_su" ? "Tập sự" : "Thử thách"}</div>`}
       </div>
       <div class="quay-go khay">
+        ${cheDo === "tap_su" && !opt.tuDo ? `<details class="so-ct" id="soct" ${luu.doc("so_ct_mo", false) ? "open" : ""}><summary>Sổ công thức · ${esc(mon.ten)}</summary><div class="so-ct-nd">
+          <b>Nguyên liệu (ly ${mon.ly.dung_tich_ml}ml)</b>
+          <ul>${mon.nguyen_lieu.map((x) => `<li>${esc(tenNl(x.nl))}: <b>${x.luong_toi_thieu ? fmt(x.luong_toi_thieu) + "–" : ""}${fmt(x.luong)} ${esc(x.don_vi)}</b></li>`).join("")}</ul>
+          <b>Các bước</b>
+          <ol>${mon.buoc.map((b, i) => `<li data-b="${i}">${esc(b.hanh_dong)}${b.loi_thuong_gap ? `<small>Lưu ý: ${esc(b.loi_thuong_gap)}</small>` : ""}</li>`).join("")}</ol>
+        </div></details>` : ""}
         <div class="goi-y" id="goiy"></div>
         ${vaoCoc.size ? `<div class="goi-y" id="coc" style="background:#eef7ff;border-color:#bcdcf5">${ic("coc")} Cốc pha: <span id="coctxt">trống</span></div>` : ""}
         <div class="the" id="khurot"></div>
@@ -280,6 +286,8 @@ function manPha(mon, ck = null, opt = {}) {
     else if (opt.tuDo) Giong.noi("Pha tự do");
     else if (ca) Giong.noi((opt.daily ? ca.thu_thach_ngay : ca.chon_mon).replace("{mon}", mon.ten)); }
 
+  $("#soct")?.addEventListener("toggle", () => luu.ghi("so_ct_mo", $("#soct").open));
+
   const ly = new Ly($("#ly"), mon.ly.dung_tich_ml);
   ly.phanTang = !!mon.buoc.some((b) => b.phan_tang);
 
@@ -298,6 +306,7 @@ function manPha(mon, ck = null, opt = {}) {
   let khoaDoc = null;
   let sanSangDoc = !ck; // ca khách: chờ lời chào xong mới đọc gợi ý
   const docHint = (k, t) => { if (!sanSangDoc || k === khoaDoc) return; khoaDoc = k; Giong.noi(t, { xep: true, hopLe: () => khoaDoc === k }); };
+  let buocTruoc = -1;
   function capNhat() {
     if ($("#coctxt")) $("#coctxt").textContent = coc.length ? coc.join(", ") : "trống";
     $("#tongml").textContent = Math.round(ly.tongMl()) + " ml";
@@ -306,10 +315,18 @@ function manPha(mon, ck = null, opt = {}) {
     if (opt.tuDo) { goiY.innerHTML = "<b>Pha tự do:</b> chọn nguyên liệu và thao tác tùy ý, xong bấm Pha xong để game đoán đây là món nào."; return; }
     if (cheDo === "tap_su") {
       const v = tienDo();
+      const cur = v ? v.buoc : mon.buoc.length;
+      if (buocTruoc >= 0 && cur > buocTruoc) { toast(`Xong bước ${buocTruoc + 1}`); Am.ting(); }
+      buocTruoc = cur;
+      document.querySelectorAll("#soct li[data-b]").forEach((li) => { const i = +li.dataset.b; li.classList.toggle("xong", i < cur); li.classList.toggle("dang", i === cur); });
       if (!v) { goiY.innerHTML = "Đã đủ các bước. Bấm <b>Pha xong</b> để chấm điểm!"; docHint("het", "Đã đủ các bước. Bấm Pha xong để chấm điểm!"); }
       else {
         const b = mon.buoc[v.buoc];
-        goiY.innerHTML = `<b>Bước ${b.thu_tu}/${mon.buoc.length}:</b> ${b.hanh_dong}`; docHint("b" + b.thu_tu, b.hanh_dong);
+        const trongBuoc = viec.filter((x) => x.buoc === v.buoc), viTri = trongBuoc.indexOf(v) + 1;
+        const tenTool = v.nhan ? "Rót " + (mon.hon_hop?.[v.nhan]?.ten || v.nhan).toLowerCase() : tt[v.thao_tac]?.ten;
+        const viecKe = v.kieu === "them" ? `Cho ${fmt(v.luong)} ${v.don_vi} ${tenNl(v.nl).toLowerCase()}`
+          : tt[v.thao_tac]?.kieu === "giu" ? `Giữ nút “${tenTool}”` : tt[v.thao_tac]?.kieu === "vong" ? `Bấm “${tenTool}” rồi vẽ vòng tròn` : `Bấm “${tenTool}”`;
+        goiY.innerHTML = `<b>Bước ${b.thu_tu}/${mon.buoc.length}:</b> ${esc(b.hanh_dong)}<div class="viec-ke">Việc kế tiếp${trongBuoc.length > 1 ? ` (${viTri}/${trongBuoc.length})` : ""}: <b>${esc(viecKe)}</b></div>`; docHint("b" + b.thu_tu, b.hanh_dong);
         if (v.kieu === "them") $(`[data-nl="${v.nl}"]`)?.classList.add("sang");
         else $(`[data-tt="${v.thao_tac}"][data-nhan="${v.nhan || ""}"]`)?.classList.add("sang");
       }

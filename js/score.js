@@ -28,9 +28,9 @@ function diemSo(thuc, dich, saiTuyetDoi) {
  * @param events [{kieu:"them", nl, luong} | {kieu:"hd", thao_tac, vong?, giay?}]
  * @param tenNl  hàm id -> tên hiển thị
  */
-export function chamDiem(mon, events, thaoTac, cheDo, tenNl) {
+export function chamDiem(mon, events, thaoTac, cheDo, tenNl, saiSoHe = 1) {
   const dungSai = thaoTac.dung_sai;
-  const tolRel = cheDo === "thu_thach" ? dungSai.thu_thach : dungSai.tap_su;
+  const tolRel = (cheDo === "thu_thach" ? dungSai.thu_thach : dungSai.tap_su) * saiSoHe; // saiSoHe: sự cố khách dễ/kỹ tính
   const viec = viecCanLam(mon, thaoTac);
   const dungDen = new Set(); // chỉ số sự kiện đã dùng
   const buocLoi = mon.buoc.map(() => ({ loi: [], diem: [] }));
@@ -204,4 +204,28 @@ export function tinhChiPhi(mon, thuVien) {
     }
   }
   return { dong, tong_da_co_gia: tong, chua_co_gia: chuaCo, day_du: chuaCo === 0 };
+}
+
+/**
+ * Pha tự do: đoán xem ly vừa pha giống món nào nhất (chấm ly theo từng công thức, lấy điểm cao nhất).
+ * @returns {mon, tong, xep:[{mon, tong}], muc:"chuan"|"giong"|"moi"}
+ */
+export function doanMon(dsMon, events, thaoTac, tenNl) {
+  const xep = dsMon.map((m) => ({ mon: m, tong: chamDiem(m, events, thaoTac, "tap_su", tenNl).tong })).sort((a, b) => b.tong - a.tong);
+  const t = xep[0] || { mon: null, tong: 0 };
+  return { mon: t.mon, tong: t.tong, xep: xep.slice(0, 3), muc: t.tong >= 85 ? "chuan" : t.tong >= 55 ? "giong" : "moi" };
+}
+
+/** Chi phí ước tính của ly tự pha, theo đúng lượng đã cho vào (chỉ tính nguyên liệu có đơn giá). */
+export function chiPhiTuDo(events, thuVien) {
+  const tong = {};
+  for (const e of events) if (e.kieu === "them") tong[e.nl] = (tong[e.nl] || 0) + e.luong;
+  let tien = 0, chuaGia = 0;
+  for (const [id, luong] of Object.entries(tong)) {
+    const e = thuVien[id];
+    if (!e || e.mien_phi) continue;
+    const dg = donGia(e);
+    if (dg == null) chuaGia++; else tien += Math.round(dg * luong);
+  }
+  return { tien, chuaGia };
 }

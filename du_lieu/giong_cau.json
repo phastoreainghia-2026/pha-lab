@@ -29,6 +29,9 @@
  "len_hang": "Chúc mừng, bạn lên hạng {hang}!",
  "mo_khoa_mon": "Mở khóa món mới: {mon}",
  "thu_thach_ngay": "Thử thách hôm nay: {mon}",
+ "tu_do_chuan": "Chuẩn món {mon}!",
+ "tu_do_giong": "Giống món {mon}.",
+ "tu_do_moi": "Một ly hoàn toàn mới!",
  "ket_qua": {
   "0": "Chưa được rồi, mình thử lại nhé!",
   "1": "Cũng được đấy, luyện thêm chút nữa nhé!",
@@ -49,6 +52,7 @@
   "Tổng kết ca",
   "Bạn vừa nhận huy hiệu mới!",
   "Hoàn thành thử thách hôm nay!",
-  "Hồ sơ của bạn"
+  "Hồ sơ của bạn",
+  "Pha tự do"
  ]
 }

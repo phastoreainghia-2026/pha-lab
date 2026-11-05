@@ -7,7 +7,7 @@ const homQua = (ngay) => { const [y, m, d] = ngay.split("-").map(Number); return
 export const ngayDep = (ngay) => { const [, m, d] = ngay.split("-"); return `${d}/${m}`; };
 
 export const tienTrinhTrong = () => ({
-  xp: 0, sao: {}, ly: 0, ngay_cuoi: null, chuoi: 0, chuoi_cao: 0, huy_hieu: {}, hang_ngay: {},
+  xp: 0, sao: {}, ly: 0, da_huong_dan: false, ca_lich_su: [], ngay_cuoi: null, chuoi: 0, chuoi_cao: 0, huy_hieu: {}, hang_ngay: {},
   tk: { hoan_hao: 0, thu_thach_3sao: 0, ca_xong: 0, ca_hang3: 0, ca_khong_bo_di: 0, combo: 0, nhanh_3sao: 0, hang_ngay: 0 },
 });
 
@@ -109,6 +109,7 @@ export function capNhatSauCa(tt0, t, dsMon, cfg, ngay) {
   const xp = Math.round(t.diem / cfg.xp.ca_diem_chia);
   tt.xp += xp;
   tt.tk.ca_xong++;
+  tt.ca_lich_su = [...(tt.ca_lich_su || []), { ngay, diem: t.diem, sao: t.sao, hang: t.hang }].slice(-30);
   if (t.hang === 3) tt.tk.ca_hang3++;
   if (t.boDi === 0) tt.tk.ca_khong_bo_di++;
   return { tt, xpNhan: xp, moi: thuong(tt0, tt, dsMon, cfg, ngay) };
@@ -118,4 +119,37 @@ export function capNhatSauCa(tt0, t, dsMon, cfg, ngay) {
 export function chuoiChiaSe({ ngay, mon, sao, diem, chuoi, tenCuaHang, facebook }) {
   return [`Pha Lab · Thử thách ${ngayDep(ngay)}`, mon, `${"★".repeat(sao)}${"☆".repeat(3 - sao)} · ${diem} điểm`,
     chuoi > 1 ? `Chuỗi ${chuoi} ngày liên tiếp` : "", `Bạn pha được mấy sao? ${tenCuaHang}${facebook ? " · " + facebook : ""}`].filter(Boolean).join("\n");
+}
+
+/** Top n lần chơi ca có điểm cao nhất (bảng điểm trên máy). */
+export function bangDiemCa(tt, n = 5) {
+  return [...(tt.ca_lich_su || [])].sort((a, b) => b.diem - a.diem).slice(0, n);
+}
+
+// ---- Sao lưu / khôi phục tiến trình bằng một đoạn mã (để chuyển sang máy khác, chưa có tài khoản trên máy chủ)
+const bam = (str) => { let h = 2166136261; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return h.toString(36); };
+const mahoa = (s) => btoa(unescape(encodeURIComponent(s)));
+const giaima = (s) => decodeURIComponent(escape(atob(s)));
+
+/** @param goi {tt, diem_cao, ca_cao}  @returns chuỗi dạng "PHALAB1.<mã>.<kiểm tra>" */
+export function xuatTienTrinh(goi) {
+  const nd = mahoa(JSON.stringify({ v: 1, ...goi }));
+  return `PHALAB1.${nd}.${bam(nd)}`;
+}
+
+/** Trả {ok, goi} hoặc {ok:false, loi}. Kiểm tra định dạng, mã kiểm tra và hình dạng dữ liệu trước khi dùng. */
+export function nhapTienTrinh(chuoi) {
+  try {
+    const p = String(chuoi || "").trim().split(".");
+    if (p.length !== 3 || p[0] !== "PHALAB1") return { ok: false, loi: "Đây không phải mã sao lưu Pha Lab." };
+    if (bam(p[1]) !== p[2]) return { ok: false, loi: "Mã bị thiếu hoặc sai ký tự (chép chưa đủ?)." };
+    const d = JSON.parse(giaima(p[1]));
+    const t = d.tt;
+    const so = (v) => typeof v === "number" && Number.isFinite(v) && v >= 0;
+    if (d.v !== 1 || !t || !so(t.xp) || !so(t.ly) || typeof t.sao !== "object" || t.sao === null || typeof t.huy_hieu !== "object" || t.huy_hieu === null)
+      return { ok: false, loi: "Mã hợp lệ nhưng nội dung không đúng dạng tiến trình." };
+    if (Object.values(t.sao).some((v) => !Number.isInteger(v) || v < 0 || v > 3)) return { ok: false, loi: "Số sao trong mã không hợp lệ." };
+    const goc = tienTrinhTrong();
+    return { ok: true, goi: { tt: { ...goc, ...t, tk: { ...goc.tk, ...(t.tk || {}) } }, diem_cao: d.diem_cao && typeof d.diem_cao === "object" ? d.diem_cao : {}, ca_cao: so(d.ca_cao) ? d.ca_cao : 0 } };
+  } catch { return { ok: false, loi: "Không đọc được mã." }; }
 }

@@ -56,6 +56,11 @@ export function kiemTraTuyChinh({ nguyenLieu = [], mon = [], gia = {}, cuaHang =
   if (hs != null && !(laSo(hs) && hs > 0)) loi.push(`Cửa hàng: hệ số giá bán phải là số lớn hơn 0.`);
   else if (laSo(hs) && hs > 10) cb.push(`Cửa hàng: hệ số giá bán ${hs} rất cao (giá bán gấp ${hs} lần chi phí), có đúng không?`);
 
+  const ud = chu(cuaHang.uu_dai);
+  if (ud.length > 160) cb.push(`Cửa hàng: ưu đãi dài ${ud.length} ký tự, game chỉ hiện 160 ký tự đầu.`);
+  const gc = chu(cuaHang.goatcounter_ma);
+  if (gc && !/^[a-z0-9-]{2,40}$/.test(gc)) loi.push("Cửa hàng: mã thống kê (GoatCounter) chỉ gồm chữ thường không dấu, số và dấu gạch ngang (ví dụ pha-lab), nên game bỏ qua mã này.");
+
   // ---- món ẩn
   const idMon = new Set(mon.map((m) => m.id));
   const an = (monTuyChinh.mon_an || []).filter((id) => { if (!idMon.has(id)) { loi.push(`Thực đơn: món "${id}" không có trong game (sẽ bị bỏ qua).`); return false; } return true; });

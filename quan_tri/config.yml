@@ -65,6 +65,8 @@ collections:
           - { label: Số Zalo của shop, name: zalo_so_dien_thoai, widget: string, required: false }
           - { label: Link Messenger (https://m.me/...), name: messenger_link, widget: string, required: false }
           - { label: Hệ số giá bán gợi ý (giá bán = chi phí nguyên liệu x hệ số), name: he_so_gia_ban_goi_y, widget: number, value_type: float, min: 0, required: false }
+          - { label: Ưu đãi hiện cho người chơi (để trống nếu chưa có), name: uu_dai, widget: string, required: false, hint: 'Ví dụ: Nhắc mã PHALAB giảm 5%. Hiện ở màn kết quả, tin nhắn đặt hàng và ảnh chia sẻ. Tối đa 160 ký tự.' }
+          - { label: Mã thống kê GoatCounter, name: goatcounter_ma, widget: string, required: false, hint: 'Chữ thường không dấu, số, gạch ngang (ví dụ pha-lab). Để trống là không thống kê.' }
   - name: thuc_don
     label: Thực đơn
     files:

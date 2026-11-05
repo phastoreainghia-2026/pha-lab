@@ -1,0 +1,31 @@
+{
+ "schema_version": 1,
+ "ghi_chu": "Hướng dẫn mở đầu cho người mới (chạy ở ván Tập sự đầu tiên). chon: bộ chọn phần tử trên màn pha.",
+ "buoc": [
+  {
+   "chon": "#ke",
+   "tieu_de": "Chọn nguyên liệu",
+   "noi": "Chạm một nguyên liệu trên kệ để lấy nó."
+  },
+  {
+   "chon": "#khurot",
+   "tieu_de": "Rót và cân",
+   "noi": "Giữ nút xanh để rót, hoặc bấm cộng trừ để chỉnh đúng lượng. Xong bấm Cho vào ly."
+  },
+  {
+   "chon": "#congcu",
+   "tieu_de": "Thao tác",
+   "noi": "Khuấy, lắc hay trang trí theo đúng công thức. Làm đủ thao tác mới được trọn điểm."
+  },
+  {
+   "chon": "#goiy",
+   "tieu_de": "Gợi ý từng bước",
+   "noi": "Ô vàng cho biết bước tiếp theo, nguyên liệu cần dùng sẽ sáng lên."
+  },
+  {
+   "chon": "#xong",
+   "tieu_de": "Pha xong",
+   "noi": "Khi pha xong, bấm Pha xong để nhận điểm, sao và lời khuyên của người pha chế."
+  }
+ ]
+}

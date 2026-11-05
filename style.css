@@ -201,3 +201,18 @@ body.lab #app{padding:0 0 calc(24px + env(safe-area-inset-bottom));max-width:520
 }
 .nut-cai{display:block;width:100%;margin:0 0 10px;padding:11px 16px;text-align:left;background:#fffaf4;color:var(--chu);box-shadow:0 2px 0 #7a4a2a}
 .nut-cai[hidden]{display:none}
+
+/* ===== Pha tự do, sự cố khách, hướng dẫn mở đầu, ưu đãi, sao lưu ===== */
+.nut-tu-do{display:block;width:100%;margin:0 0 12px;padding:12px 16px;text-align:left;background:linear-gradient(#8a6ad6,#6f4fc2);color:#fff;font-size:16px;box-shadow:0 3px 0 #4b3590}
+.nut-tu-do small{display:block;font-weight:500;font-size:12px;opacity:.95;margin-top:2px}
+.su-co{display:block;font-style:normal;font-size:11px;font-weight:700;color:#b34100;background:#ffe9d6;border-radius:8px;padding:2px 6px;margin-top:3px;line-height:1.25}
+em.su-co{display:inline-block}
+.uu-dai{background:#fff3cd;border-color:#f3dc8a}
+#ma-sao-luu{width:100%;font:inherit;font-size:13px;padding:8px;border:1px solid var(--vien);border-radius:10px;word-break:break-all}
+.hd-lop{position:fixed;inset:0;background:rgba(10,14,20,.62);z-index:70}
+.hd-the{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(92vw,420px);background:#fffaf4;color:var(--chu);border-radius:18px;padding:14px 16px;z-index:72;box-shadow:0 10px 40px #000a}
+.hd-the small{display:block;color:var(--phu);font-weight:700;font-size:12px}
+.hd-the b{display:block;font-size:18px;color:var(--chu-dao-dam);margin:2px 0}
+.hd-the p{margin:0 0 10px;font-size:15px}
+.hd-sang{position:relative;z-index:71;box-shadow:0 0 0 4px #ffb347,0 0 0 9999px rgba(10,14,20,0) !important;border-radius:12px;background-clip:padding-box}
+@media (prefers-reduced-motion:no-preference){.hd-sang{animation:hdsang 1.2s ease-in-out infinite}@keyframes hdsang{50%{box-shadow:0 0 0 8px rgba(255,179,71,.55)}}}

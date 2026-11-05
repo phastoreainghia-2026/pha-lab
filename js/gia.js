@@ -2,7 +2,7 @@
 // Vì sao tách ra: Khải sửa giá/mã hàng/cấu hình từ xa (Sveltia CMS) hoặc ở trang quản trị trên máy,
 // cả hai đều chỉ ghi vào các file nhỏ này, nên không bao giờ đè lên dữ liệu sinh tự động (tao_du_lieu_game.py).
 //   gia_tuy_chinh.json      {nguyen_lieu:[{nguyen_lieu, ma_hang, ten_hang, gia_ban_sau_thue, quy_cach, tinh_gia, xac_nhan, ghi_chu}]}
-//   cua_hang_tuy_chinh.json {zalo_so_dien_thoai, messenger_link, he_so_gia_ban_goi_y}
+//   cua_hang_tuy_chinh.json {zalo_so_dien_thoai, messenger_link, he_so_gia_ban_goi_y, uu_dai, goatcounter_ma}
 //   mon_tuy_chinh.json      {mon_an:[id món, ví dụ "m289"]}   (món bị ẩn)
 //   can_bang_tuy_chinh.json {so_khach, thoi_gian_co_so, ...}  (độ khó)
 
@@ -34,6 +34,8 @@ export function apCuaHang(ch, tc) {
   if (chu(tc?.zalo_so_dien_thoai)) r.zalo_so_dien_thoai = chu(tc.zalo_so_dien_thoai);
   if (chu(tc?.messenger_link)) r.messenger_link = chu(tc.messenger_link);
   if (laSo(tc?.he_so_gia_ban_goi_y) && tc.he_so_gia_ban_goi_y > 0) r.he_so_gia_ban_goi_y = tc.he_so_gia_ban_goi_y;
+  if (chu(tc?.uu_dai)) r.uu_dai = chu(tc.uu_dai).slice(0, 160);
+  if (/^[a-z0-9-]{2,40}$/.test(chu(tc?.goatcounter_ma))) r.goatcounter_ma = chu(tc.goatcounter_ma);
   return r;
 }
 

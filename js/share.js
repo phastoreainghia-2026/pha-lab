@@ -16,7 +16,7 @@ function chuGon(ctx, text, x, y, rong, cao) {
 }
 
 /** @returns Promise<Blob PNG>  | svgChuoi: SVG của ly đã serialize */
-export async function taoAnhChiaSe({ cuaHang, tenMon, diem, sao, cheDo, svgChuoi, tongTien, mauChuDao = "#ff7a3d" }) {
+export async function taoAnhChiaSe({ cuaHang, tenMon, diem, sao, cheDo, svgChuoi, tongTien, uuDai = "", mauChuDao = "#ff7a3d" }) {
   const W = 1080, H = 1350;
   const c = document.createElement("canvas");
   c.width = W; c.height = H;
@@ -57,6 +57,12 @@ export async function taoAnhChiaSe({ cuaHang, tenMon, diem, sao, cheDo, svgChuoi
     g.fillText("Nguyên liệu ước tính " + tongTien.toLocaleString("vi-VN") + "đ/ly", W / 2 + 220, yCuoi + 600);
   }
 
+  if (uuDai) {
+    g.textAlign = "center";
+    g.fillStyle = mauChuDao; g.beginPath(); g.roundRect(60, H - 290, W - 120, 84, 24); g.fill();
+    g.fillStyle = "#fff"; g.font = "700 36px system-ui, sans-serif";
+    g.fillText("Ưu đãi: " + uuDai.slice(0, 60), W / 2, H - 238);
+  }
   g.textAlign = "left";
   g.fillStyle = "#2b2a33"; g.font = "700 44px system-ui, sans-serif";
   g.fillText("Học pha chế thực chiến cùng " + (cuaHang.ten || "Pha Store"), 60, H - 150);

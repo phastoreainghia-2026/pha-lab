@@ -1,0 +1,11 @@
+name: Kiem tra du lieu Pha Lab
+on:
+  push:
+    paths: ["du_lieu/**"]
+  workflow_dispatch:
+jobs:
+  kiem-tra:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node .github/kiem_tra/kiem_tra_du_lieu.mjs du_lieu

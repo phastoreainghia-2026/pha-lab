@@ -296,3 +296,10 @@ body.pho #toast{bottom:calc(112px + env(safe-area-inset-bottom))}
 @keyframes ph-khoi{0%{opacity:0;transform:translateY(0) scale(.6)}25%{opacity:.75}100%{opacity:0;transform:translateY(-70px) scale(1.7)}}
 @keyframes ph-xung{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 @media (prefers-reduced-motion:reduce){.ph-di,.ph-bob,.ph-nguoi .chan,.ph-rung,.ph-may,.ph-chim-bay,.ph-canh-chim,.ph-tan,.ph-bong,.ph-goi-y,.ph-lac-binh,.ph-co,.ph-khoi circle,.ph-cta button{animation:none}.ph-di{display:none}}
+
+/* ===== Nhân vật khách, combo, xu ===== */
+.lua-combo{font-style:normal;color:#d9480f;font-weight:800;animation:luacombo .9s ease-in-out infinite alternate}
+.xu{font-weight:800;color:#a66a00}
+.loi-nv{display:block;font-style:italic;color:var(--chu);margin:2px 0}
+@keyframes luacombo{from{transform:scale(1)}to{transform:scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.lua-combo{animation:none}}

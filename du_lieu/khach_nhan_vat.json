@@ -1,0 +1,14 @@
+{
+ "schema_version": 1,
+ "ghi_chu": "Nhân vật khách ở chế độ Khách gọi món. Mỗi ca bốc ngẫu nhiên không trùng. Câu thoại dùng {mon} thay cho tên món. Sửa/thêm nhân vật ở đây, không cần sửa code. xu_he_so: nhân số xu thưởng (xu chỉ để vui, không ảnh hưởng điểm và sao).",
+ "nhan_vat": [
+  {"id": "bac_tai", "ten": "Bác tài xế", "emoji": "🚕", "goi": ["Cho bác một {mon}, nhanh nhanh nhé!", "Bác đang chạy xe, {mon} liền tay giúp bác!"], "khen": ["Ngon quá, chạy xe khỏe re!", "Chuẩn vị, bác sẽ giới thiệu bạn bè!"], "che": ["Ừm... bác vội mà ly này chưa ổn.", "Thôi để bác uống đỡ vậy."], "xu_he_so": 1.2},
+  {"id": "co_giao", "ten": "Cô giáo Lan", "emoji": "📚", "goi": ["Cô muốn một {mon}, em làm cẩn thận nhé.", "Cho cô {mon}, đúng công thức như sách nhé!"], "khen": ["Giỏi lắm, cô cho điểm mười!", "Em pha rất đúng, cô khen!"], "che": ["Chưa đạt rồi em, về luyện lại nhé.", "Cô chấm sáu điểm thôi, cố lên!"], "xu_he_so": 1.1},
+  {"id": "be_bi", "ten": "Bé Bi", "emoji": "🧒", "goi": ["Con muốn {mon}! Làm nhanh nha anh chị!", "Mẹ cho con {mon}, ngọt ngọt nha!"], "khen": ["Woa ngon quá trời luôn!", "Con thích lắm, cảm ơn nha!"], "che": ["Hic, con không thích ly này...", "Con muốn đổi ly khác cơ!"], "xu_he_so": 1.0},
+  {"id": "anh_shipper", "ten": "Anh shipper", "emoji": "🛵", "goi": ["Một {mon} mang đi, anh còn đơn nữa!", "Cho anh {mon}, gấp lắm bạn ơi!"], "khen": ["Tuyệt, đúng chất, 5 sao nha!", "Nhanh mà ngon, anh quay lại ủng hộ!"], "che": ["Trễ rồi, anh phải đi đây...", "Ly này hơi lỗi, lần sau nhé."], "xu_he_so": 1.3},
+  {"id": "co_chu_tiem", "ten": "Cô chủ tiệm bên cạnh", "emoji": "🧑‍🍳", "goi": ["Cho cô {mon}, cô biết nghề đó nha!", "Cô ghé thử {mon} quán em xem sao."], "khen": ["Được đó, có tay nghề!", "Cô chịu, ngon không chê vào đâu được."], "che": ["Chưa tới, em cần luyện thêm.", "Cô nếm ra chỗ chưa đúng rồi nha."], "xu_he_so": 1.4},
+  {"id": "cap_doi", "ten": "Cặp đôi hẹn hò", "emoji": "💑", "goi": ["Cho tụi mình {mon}, uống chung nhé!", "Một {mon} thật xinh để chụp hình nha!"], "khen": ["Đẹp và ngon, chụp hình liền!", "Tụi mình rất thích, cảm ơn nha!"], "che": ["Chưa đẹp lắm để chụp hình...", "Hơi tiếc, mong lần sau ngon hơn."], "xu_he_so": 1.0},
+  {"id": "du_khach", "ten": "Du khách nước ngoài", "emoji": "🧳", "goi": ["One {mon}, please! Looks delicious!", "I would like {mon}, thank you!"], "khen": ["Wonderful! Very good!", "Amazing taste, five stars!"], "che": ["Hmm, not what I expected.", "Maybe next time, thank you."], "xu_he_so": 1.2},
+  {"id": "dan_van_phong", "ten": "Anh chị văn phòng", "emoji": "💼", "goi": ["Cho mình {mon}, còn họp nữa nên gấp nhé.", "Một {mon} giúp mình tỉnh táo chiều nay!"], "khen": ["Đỉnh quá, cảm ơn bạn nhiều!", "Ngon, mai mình quay lại nữa!"], "che": ["Hơi thất vọng, giờ mình phải đi.", "Chưa ổn, mong lần sau tốt hơn."], "xu_he_so": 1.1}
+ ]
+}

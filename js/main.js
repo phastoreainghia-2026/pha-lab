@@ -71,7 +71,7 @@ async function taiDuLieu() {
   const hien = new Set(cfg.mon_hien_thi || []);
   const an = monBiAn(rc.mon, cfg.mon_an, tcMon);
   const cb = apCanBang(kh, tp, tcCanBang);
-  const [suCo, huongDan] = await Promise.all(["su_co.json", "huong_dan.json"].map(tuyChon));
+  const [suCo, huongDan, nhanVat] = await Promise.all(["su_co.json", "huong_dan.json", "khach_nhan_vat.json"].map(tuyChon));
   apGia(nl.nguyen_lieu, tcGia);
   return {
     thuVien: Object.fromEntries(nl.nguyen_lieu.map((x) => [x.id, x])),
@@ -82,7 +82,7 @@ async function taiDuLieu() {
     cuaHang: apCuaHang(ch, tcCuaHang),
     khach: cb.khach,
     tt: cb.tienTrinh,
-    suCo, huongDan,
+    suCo, huongDan, nhanVat,
   };
 }
 
@@ -234,6 +234,8 @@ function manChu() {
 function manPha(mon, ck = null, opt = {}) {
   manHienTai++;
   const suCo = ck ? ck.suCo?.[ck.i] || null : null; // sự cố ngẫu nhiên của khách này
+  const nv = ck ? ck.nv?.[ck.i] || null : null;      // nhân vật khách (tên, câu thoại riêng)
+  const loiGoi = nv ? chonCau(nv.goi).replace("{mon}", mon.ten) : `Cho mình một ${mon.ten}!`;
   const han = ck ? thoiHanKhach(mon, DL.khach, cheDo, suCo) : 0; // giây khách chịu chờ
   const bd = performance.now();
   const seed = ck ? ck.i * 7 + Math.floor(Math.random() * 40) : 0;
@@ -273,7 +275,7 @@ function manPha(mon, ck = null, opt = {}) {
         <div class="da-roi-khung" id="daroi"></div>
         <div class="khu-ly"><svg id="ly" role="img" aria-label="Ly đang pha"></svg></div>
         <div class="hud-tren"><button class="phu nho" id="ve">← Phòng lab</button><span class="tong-ml" id="tongml">0 ml</span><button class="am" id="giong" aria-label="Bật hoặc tắt giọng nói"></button><button class="am" id="am" aria-label="Bật hoặc tắt âm thanh"></button></div>
-        ${ck ? `<div class="khach" id="khach"><span class="mat" id="matk">${matKhach(seed, "vui")}</span><div class="loik"><b>Khách ${ck.i + 1}/${ck.n}</b><span>Cho mình một ${mon.ten}!</span>${suCo ? `<em class="su-co" title="${esc(suCo.mo_ta)}">${esc(suCo.ten)}: ${esc(suCo.mo_ta)}</em>` : ""}<div class="han" data-mat="vui"><i id="han"></i></div><small id="hanso"></small></div></div>`
+        ${ck ? `<div class="khach" id="khach"><span class="mat" id="matk">${matKhach(seed, "vui")}</span><div class="loik"><b>${nv ? esc(nv.emoji + " " + nv.ten) + " · " : ""}Khách ${ck.i + 1}/${ck.n}${ck.combo >= 1 ? `<i class="lua-combo"> 🔥 Combo x${ck.combo}</i>` : ""}</b><span>${esc(loiGoi)}</span>${suCo ? `<em class="su-co" title="${esc(suCo.mo_ta)}">${esc(suCo.ten)}: ${esc(suCo.mo_ta)}</em>` : ""}<div class="han" data-mat="vui"><i id="han"></i></div><small id="hanso"></small></div></div>`
           : `<div class="ten-mon">${mon.ten} · ${cheDo === "tap_su" ? "Tập sự" : "Thử thách"}</div>`}
       </div>
       <div class="quay-go khay">
@@ -719,10 +721,26 @@ function batDauCa() {
   const mo = dsMoKhoa();
   while (bo.length < n) bo.push(...[...mo].sort(() => Math.random() - 0.5));
   const don = bo.slice(0, n);
-  khachKe({ n, i: 0, don, kq: [], combo: 0, suCo: don.map((_, i) => chonSuCo(DL.suCo, i)) });
+  khachKe({ n, i: 0, don, kq: [], combo: 0, suCo: don.map((_, i) => chonSuCo(DL.suCo, i)), nv: chonNhanVat(n) });
 }
+const chonCau = (ds) => (ds?.length ? ds[Math.floor(Math.random() * ds.length)] : "");
+/** Bốc n nhân vật khách, không trùng trong một ca (nếu thiếu thì lặp lại). Không có dữ liệu thì trả mảng rỗng. */
+function chonNhanVat(n) {
+  const ds = DL.nhanVat?.nhan_vat;
+  if (!ds?.length) return [];
+  const bo = [];
+  while (bo.length < n) bo.push(...[...ds].sort(() => Math.random() - 0.5));
+  return bo.slice(0, n);
+}
+/** Xu thưởng vui cho một khách: theo sao, hệ số nhân vật, combo. Không ảnh hưởng điểm hay sao. */
+const xuKhach = (kk, nv) => kk.boDi ? 0 : Math.round((kk.sao * 5 + (kk.sao === 3 ? 5 : 0) + Math.max(0, kk.combo - 1) * 3) * (nv?.xu_he_so ?? 1));
 function khachKe(ck) { if (ck.i >= ck.n) manKetCa(ck); else manPha(ck.don[ck.i], ck); }
-function ghiKhach(ck, mon, kk) { ck.kq.push({ mon: mon.ten, suCo: ck.suCo?.[ck.i]?.ten || null, ...kk }); ck.combo = kk.combo; ck.i++; }
+function ghiKhach(ck, mon, kk) {
+  const nv = ck.nv?.[ck.i] || null;
+  kk.xu = xuKhach(kk, nv);
+  ck.kq.push({ mon: mon.ten, suCo: ck.suCo?.[ck.i]?.ten || null, nv: nv ? nv.emoji + " " + nv.ten : null, ...kk });
+  ck.combo = kk.combo; ck.i++;
+}
 const SAO = (n) => "★".repeat(n) + "☆".repeat(3 - n);
 const TOC = { nhanh: "Nhanh", vua: "Vừa", cham: "Chậm", bo_di: "Bỏ đi" };
 
@@ -755,10 +773,10 @@ function manKetCa(ck) {
   app.innerHTML = `
     <div class="thanh"><h2>Tổng kết ca</h2></div>
     <div class="the diem"><div class="sao">${SAO(t.hang)}</div><div class="so">${t.diem}</div>
-      <div>điểm · ${t.sao}/${t.toiDa} sao${t.boDi ? " · " + t.boDi + " khách bỏ đi" : ""}${kyLuc ? ` · ${ic("cup")} Kỷ lục ca mới` : ""}</div></div>
+      <div>điểm · ${t.sao}/${t.toiDa} sao${t.boDi ? " · " + t.boDi + " khách bỏ đi" : ""}${ck.kq.some((k) => k.xu) ? ` · <span class="xu">🪙 ${ck.kq.reduce((s, k) => s + (k.xu || 0), 0)} xu</span>` : ""}${kyLuc ? ` · ${ic("cup")} Kỷ lục ca mới` : ""}</div></div>
     ${thuongHtml(res)}
     <div class="the"><p class="phu-tieu">Từng khách</p>
-      ${ck.kq.map((k, i) => `<div class="buoc ${k.sao >= 2 ? "ok" : "loi"}"><div class="dau">Khách ${i + 1}: <span style="font-weight:500">${k.mon}</span>${k.suCo ? ` · <em class="su-co">${esc(k.suCo)}</em>` : ""}</div>
+      ${ck.kq.map((k, i) => `<div class="buoc ${k.sao >= 2 ? "ok" : "loi"}"><div class="dau">${k.nv ? esc(k.nv) : "Khách " + (i + 1)}: <span style="font-weight:500">${k.mon}</span>${k.suCo ? ` · <em class="su-co">${esc(k.suCo)}</em>` : ""}</div>
         <div class="li" style="color:var(--chu)">${SAO(k.sao)} · ${TOC[k.toc] || ""} · +${k.diem} điểm${k.combo > 1 ? " · combo x" + k.combo : ""}</div></div>`).join("")}</div>
     <div class="cuoi"><button class="phu" id="chu">Về phòng lab</button><button id="moi">Chơi ca mới</button></div>`;
   $("#chu").onclick = manChu;
@@ -773,7 +791,8 @@ function manKetQua(mon, events, ly, kh = null, opt = {}) {
   Am.nen(false);
   const r = chamDiem(mon, events, DL.thaoTac, cheDo, tenNl, kh?.suCo?.sai_so_he_so ?? 1);
   let kk = null; // kết quả theo khách (chỉ ở chế độ Khách gọi món)
-  if (kh) { kk = chamKhach({ saoDo: r.sao, tong: r.tong, giayDung: kh.giayDung, han: kh.han }, DL.khach, kh.ck.combo, kh.suCo); ghiKhach(kh.ck, mon, kk); }
+  let nvKq = null; // nhân vật của khách vừa phục vụ
+  if (kh) { nvKq = kh.ck.nv?.[kh.ck.i] || null; kk = chamKhach({ saoDo: r.sao, tong: r.tong, giayDung: kh.giayDung, han: kh.han }, DL.khach, kh.ck.combo, kh.suCo); ghiKhach(kh.ck, mon, kk); }
   if (kk) {
     Am.ketQua(kk.sao); if (kk.sao === 3) tre(() => Am.kaChing(), 500);
     tre(() => { const ca = Giong.cau(); if (ca) Giong.noi(ca.khach_ket_qua[kk.sao]); }, 900);
@@ -798,7 +817,7 @@ function manKetQua(mon, events, ly, kh = null, opt = {}) {
   app.innerHTML = `
     <div class="thanh"><h2>${mon.ten}</h2><span class="chip" style="padding:4px 10px">${ic(cheDo === "tap_su" ? "mam" : "lua", 15)} ${cheDo === "tap_su" ? "Tập sự" : "Thử thách"}</span></div>
     ${kk ? `<div class="the khach-kq"><div class="mat-lon">${matKhach(kh.ck.i * 7, kk.sao >= 2 ? "vui" : kk.sao === 1 ? "binh_thuong" : "gian")}</div>
-      <div><b>${["Khách không hài lòng", "Khách tạm hài lòng", "Khách hài lòng", "Khách rất hài lòng"][kk.sao]}</b><br>${SAO(kk.sao)} · Giao ${Math.round(kh.giayDung)}/${kh.han} giây (${TOC[kk.toc]}) · <b>+${kk.diem} điểm</b>${kk.combo > 1 ? " · Combo x" + kk.combo : ""}${kh.suCo ? `<br><em class="su-co">${esc(kh.suCo.ten)}: ${esc(kh.suCo.mo_ta)}</em>` : ""}</div></div>` : ""}
+      <div><b>${["Khách không hài lòng", "Khách tạm hài lòng", "Khách hài lòng", "Khách rất hài lòng"][kk.sao]}</b>${nvKq ? `<br><span class="loi-nv">${esc(nvKq.emoji + " " + nvKq.ten)}: “${esc(chonCau(kk.sao >= 2 ? nvKq.khen : nvKq.che))}”</span>` : ""}<br>${SAO(kk.sao)} · Giao ${Math.round(kh.giayDung)}/${kh.han} giây (${TOC[kk.toc]}) · <b>+${kk.diem} điểm</b>${kk.combo > 1 ? ` · <span class="lua-combo">🔥 Combo x${kk.combo}</span>` : ""}${kk.xu ? ` · <span class="xu">🪙 +${kk.xu} xu</span>` : ""}${kh.suCo ? `<br><em class="su-co">${esc(kh.suCo.ten)}: ${esc(kh.suCo.mo_ta)}</em>` : ""}</div></div>` : ""}
     <div class="the diem"><div class="sao">${"★".repeat(r.sao)}${"☆".repeat(3 - r.sao)}</div><div class="so">${r.tong}</div>
       <div>${r.tong >= 90 ? "Chuẩn bartender!" : r.tong >= 70 ? "Khá lắm, gần chuẩn rồi" : r.tong >= 40 ? "Cần luyện thêm" : "Thử lại nhé, ai cũng từng vậy"}${moiKyLuc ? ` · ${ic("cup")} Kỷ lục mới` : ""}</div></div>
     ${thuongHtml(res)}

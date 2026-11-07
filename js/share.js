@@ -16,7 +16,7 @@ function chuGon(ctx, text, x, y, rong, cao) {
 }
 
 /** @returns Promise<Blob PNG>  | svgChuoi: SVG của ly đã serialize */
-export async function taoAnhChiaSe({ cuaHang, tenMon, diem, sao, cheDo, svgChuoi, tongTien, uuDai = "", mauChuDao = "#ff7a3d" }) {
+export async function taoAnhChiaSe({ cuaHang, tenMon, diem, sao, cheDo, svgChuoi, tiLe = 200 / 300, tongTien, uuDai = "", mauChuDao = "#ff7a3d" }) {
   const W = 1080, H = 1350;
   const c = document.createElement("canvas");
   c.width = W; c.height = H;
@@ -40,8 +40,9 @@ export async function taoAnhChiaSe({ cuaHang, tenMon, diem, sao, cheDo, svgChuoi
   // ly
   try {
     const hinh = await taiAnh("data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgChuoi));
-    const h = 620, w = h * (200 / 300);
-    g.drawImage(hinh, W / 2 - w / 2 - 200, yCuoi + 50, w, h);
+    const h = 520, w = h * tiLe, x0 = 56, y0 = yCuoi + 50;
+    g.save(); g.beginPath(); g.roundRect(x0, y0, w, h, 28); g.clip();
+    g.drawImage(hinh, x0, y0, w, h); g.restore();
   } catch { /* không vẽ được ly thì bỏ qua */ }
 
   // điểm

@@ -1,5 +1,6 @@
 // Pha Lab - giao diện. Không có tên món/nguyên liệu nào trong file này: tất cả đọc từ du_lieu/*.json.
 import { Ly } from "./glass.js";
+import { dungCanhLy } from "./trinh_bay.js";
 import { chamDiem, tinhChiPhi, viecCanLam, doanMon, chiPhiTuDo } from "./score.js";
 import { canhPhongLab, canhQuay, batParallax, matKhach } from "./lab.js";
 import { canhPho, ganPho } from "./pho.js";
@@ -663,8 +664,10 @@ function manKetQuaTuDo(events, ly) {
   if (d.muc === "chuan") Hieu.chayThuong({ baSao: true });
   TK.suKien(`pha-tu-do/${d.muc}/${d.mon?.id || "khong"}`);
   const thieu = r ? r.chi_tiet.filter((c) => !c.ok) : [];
+  const kl = khungLy(ly);
   app.innerHTML = `
     <div class="thanh"><h2>Pha tự do</h2></div>
+    ${kl.html()}
     <div class="the diem"><div class="so" style="font-size:30px;line-height:1.2">${esc(tieuDe)}</div>
       <div>${d.muc === "moi" ? "Không giống món nào trong thực đơn (cao nhất " + d.tong + " điểm giống). Biết đâu thành món mới!" : "Độ giống công thức: <b>" + d.tong + "</b>/100"}</div></div>
     ${r && thieu.length ? `<div class="the"><p class="phu-tieu">Muốn đúng chuẩn ${esc(d.mon.ten)} thì cần</p>${thieu.map((c) => `<div class="buoc loi"><div class="dau" style="font-weight:600">Bước ${c.thu_tu}: ${esc(c.hanh_dong)}</div>${c.loi.map((l) => `<div class="li">• ${esc(l)}</div>`).join("")}</div>`).join("")}</div>` : ""}
@@ -672,6 +675,7 @@ function manKetQuaTuDo(events, ly) {
     <div class="the"><p class="phu-tieu">Chi phí nguyên liệu ước tính của ly này</p><p class="tong-gia">${cp.chuaGia ? "Đã có giá: " + tien(cp.tien) : tien(cp.tien)}</p>
       ${cp.chuaGia ? `<p class="chua-gia">Còn ${cp.chuaGia} nguyên liệu chưa có giá nên chưa tính tổng.</p>` : ""}</div>
     <div class="cuoi"><button class="phu" id="chu">Về phòng lab</button><button id="lai">Pha ly khác</button></div>`;
+  kl.gan();
   $("#chu").onclick = manChu;
   $("#lai").onclick = () => manPha(monTuDo(), null, { tuDo: true });
 }
@@ -713,6 +717,24 @@ function chayHuongDan() {
   $("#hd-tiep", lop).onclick = () => { Am.cham(); if (i >= buoc.length - 1) return dong(true); i++; chon(); };
   $("#hd-bo", lop).onclick = () => dong(false);
   chon();
+}
+
+// ======================================================= LY THÀNH PHẨM (trình bày + trang trí ngẫu nhiên)
+function khungLy(ly) {
+  const moi = () => dungCanhLy(ly, Math.floor(Math.random() * 2 ** 31));
+  const st = { canh: moi() };
+  const nhan = () => st.canh.nhan.map((n) => `<span class="chip tb-chip">${esc(n)}</span>`).join("");
+  return {
+    st,
+    html: () => `<div class="the trinh-bay"><div class="tb-canh" id="tb-canh">${st.canh.svg}</div><div class="tb-nhan" id="tb-nhan">${nhan()}</div>
+      <div class="tb-hang"><button class="phu nho" id="tb-doi">🎲 Trang trí lại</button></div>
+      <small class="tb-ghi">Đồ trang trí chỉ để cho đẹp, không phải công thức và không tính điểm.</small></div>`,
+    gan: () => {
+      const b = $("#tb-doi");
+      if (!b) return;
+      b.onclick = () => { Am.cham(); st.canh = moi(); $("#tb-canh").innerHTML = st.canh.svg; $("#tb-nhan").innerHTML = nhan(); };
+    },
+  };
 }
 
 // ======================================================= CHẾ ĐỘ KHÁCH GỌI MÓN
@@ -786,7 +808,7 @@ function manKetCa(ck) {
 // ======================================================= MÀN KẾT QUẢ
 function manKetQua(mon, events, ly, kh = null, opt = {}) {
   manHienTai++;
-  const svgChuoi = new XMLSerializer().serializeToString(ly.svg);
+  const kl = khungLy(ly); // ly thành phẩm: trình bày + trang trí ngẫu nhiên
   document.body.classList.remove("lab");
   Am.nen(false);
   const r = chamDiem(mon, events, DL.thaoTac, cheDo, tenNl, kh?.suCo?.sai_so_he_so ?? 1);
@@ -816,6 +838,7 @@ function manKetQua(mon, events, ly, kh = null, opt = {}) {
 
   app.innerHTML = `
     <div class="thanh"><h2>${mon.ten}</h2><span class="chip" style="padding:4px 10px">${ic(cheDo === "tap_su" ? "mam" : "lua", 15)} ${cheDo === "tap_su" ? "Tập sự" : "Thử thách"}</span></div>
+    ${kl.html()}
     ${kk ? `<div class="the khach-kq"><div class="mat-lon">${matKhach(kh.ck.i * 7, kk.sao >= 2 ? "vui" : kk.sao === 1 ? "binh_thuong" : "gian")}</div>
       <div><b>${["Khách không hài lòng", "Khách tạm hài lòng", "Khách hài lòng", "Khách rất hài lòng"][kk.sao]}</b>${nvKq ? `<br><span class="loi-nv">${esc(nvKq.emoji + " " + nvKq.ten)}: “${esc(chonCau(kk.sao >= 2 ? nvKq.khen : nvKq.che))}”</span>` : ""}<br>${SAO(kk.sao)} · Giao ${Math.round(kh.giayDung)}/${kh.han} giây (${TOC[kk.toc]}) · <b>+${kk.diem} điểm</b>${kk.combo > 1 ? ` · <span class="lua-combo">🔥 Combo x${kk.combo}</span>` : ""}${kk.xu ? ` · <span class="xu">🪙 +${kk.xu} xu</span>` : ""}${kh.suCo ? `<br><em class="su-co">${esc(kh.suCo.ten)}: ${esc(kh.suCo.mo_ta)}</em>` : ""}</div></div>` : ""}
     <div class="the diem"><div class="sao">${"★".repeat(r.sao)}${"☆".repeat(3 - r.sao)}</div><div class="so">${r.tong}</div>
@@ -837,6 +860,7 @@ function manKetQua(mon, events, ly, kh = null, opt = {}) {
     ${opt.daily ? `<div class="cuoi"><button class="phu" id="chep">Chép kết quả để khoe</button></div>` : ""}
     ${DL.cuaHang.uu_dai ? `<div class="the uu-dai">${ic("gio")} <b>Ưu đãi:</b> ${esc(DL.cuaHang.uu_dai)}</div>` : ""}
     <div class="cuoi"><button id="dat" style="background:var(--ok)">${ic("gio")} Đặt giỏ nguyên liệu</button><button id="anh" class="phu">${ic("anh")} Ảnh chia sẻ</button></div>`;
+  kl.gan();
   if (kk) $("#tiep").onclick = () => { Giong.noi(kh.ck.i >= kh.ck.n ? "Tổng kết ca" : "Khách tiếp theo"); khachKe(kh.ck); };
   else { $("#chu").onclick = manChu; $("#lai").onclick = () => manPha(mon, null, opt); }
   if (res.hangNgay?.lanDau) TK.suKien("thu-thach-ngay/xong");
@@ -848,7 +872,7 @@ function manKetQua(mon, events, ly, kh = null, opt = {}) {
   $("#anh").onclick = async () => {
     try {
       const { taoAnhChiaSe, luuHoacChiaSe } = await import("./share.js"); // chỉ tải khi cần
-      const blob = await taoAnhChiaSe({ cuaHang: DL.cuaHang, tenMon: mon.ten, diem: r.tong, sao: r.sao, cheDo, svgChuoi,
+      const blob = await taoAnhChiaSe({ cuaHang: DL.cuaHang, tenMon: mon.ten, diem: r.tong, sao: r.sao, cheDo, svgChuoi: kl.st.canh.svg, tiLe: kl.st.canh.w / kl.st.canh.h,
         tongTien: cp.day_du ? cp.tong_da_co_gia : null, uuDai: DL.cuaHang.uu_dai || "", mauChuDao: DL.cuaHang.mau_chu_dao || "#ff7a3d" });
       TK.suKien("chia-se/" + mon.id);
       const kq = await luuHoacChiaSe(blob, "pha-lab-" + mon.id_kho + ".png");

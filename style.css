@@ -303,3 +303,16 @@ body.pho #toast{bottom:calc(112px + env(safe-area-inset-bottom))}
 .loi-nv{display:block;font-style:italic;color:var(--chu);margin:2px 0}
 @keyframes luacombo{from{transform:scale(1)}to{transform:scale(1.12)}}
 @media (prefers-reduced-motion:reduce){.lua-combo{animation:none}}
+
+/* ===== Ly thành phẩm (trình bày + trang trí) ===== */
+.trinh-bay{text-align:center;padding:10px 10px 12px}
+.tb-canh{border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(60,35,10,.25);animation:tbvao .6s cubic-bezier(.2,.9,.3,1.2) both}
+.tb-canh svg{display:block;width:100%;height:auto;max-width:360px;margin:0 auto}
+.tb-nhan{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:10px 0 6px}
+.tb-chip{padding:3px 10px;font-size:12px;font-weight:700}
+.tb-hang{display:flex;justify-content:center;margin:4px 0}
+.tb-ghi{display:block;color:var(--phu);font-size:11px;margin-top:2px}
+.tb-sp{transform-box:fill-box;transform-origin:center;animation:tbsp 2.2s ease-in-out infinite}
+@keyframes tbvao{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes tbsp{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.tb-canh{animation:none}.tb-sp{animation:none;opacity:.6}}

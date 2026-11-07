@@ -16,6 +16,8 @@ const sang = (c, k) => toHex(hex(c).map((v) => v + (255 - v) * k));
 const toi = (c, k) => toHex(hex(c).map((v) => v * (1 - k)));
 // nửa bề rộng thân ly tại độ cao y
 const nuaRong = (y) => 100 - (D_TREN + (D_DUOI - D_TREN) * Math.max(0, Math.min(1, (y - TOP) / (BOT - TOP))));
+export { nuaRong };
+export const KICH_THUOC_LY = { W, H, TOP, BOT };
 // số giả ngẫu nhiên cố định (để vị trí bọt/giọt không nhảy mỗi lần vẽ)
 const ngauNhien = (i) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
 
@@ -28,6 +30,7 @@ export class Ly {
     this.phanTang = false;
     this.truoc = null; // lớp đang rót, chưa cho vào ly
     this.coBot = false; // lớp bọt (sau khi đánh bọt)
+    this.hienVach = true; // vạch chia ml (tắt khi trình bày ly thành phẩm)
     svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
     this.ve();
   }
@@ -149,6 +152,14 @@ export class Ly {
       }
       el("ellipse", { cx: W / 2, cy: y + 2, rx, ry: 4, fill: "#fffaf0", opacity: 0.9 }, g);
     }
+    // chiều sâu chất lỏng: đáy ly đậm hơn, gần mặt nước sáng hơn (cho cảm giác có khối)
+    if (y < BOT - 4) {
+      const gs = el("linearGradient", { id: "ly-sau", x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+      el("stop", { offset: 0, "stop-color": "#fff", "stop-opacity": 0.14 }, gs);
+      el("stop", { offset: 0.5, "stop-color": "#000", "stop-opacity": 0 }, gs);
+      el("stop", { offset: 1, "stop-color": "#000", "stop-opacity": 0.2 }, gs);
+      el("rect", { x: 0, y, width: W, height: BOT - y + 20, fill: "url(#ly-sau)" }, g);
+    }
     // bọt khí li ti trong nước
     const coNuoc = this.lop.some((l) => l.dang === "long") || (this.truoc && this.truoc.dang === "long");
     if (coNuoc && y < BOT - 10) {
@@ -174,13 +185,13 @@ export class Ly {
       }
     }
     // vạch ml
-    for (let ml = 100; ml < this.dungTich; ml += 100) {
+    for (let ml = 100; this.hienVach && ml < this.dungTich; ml += 100) {
       const yy = BOT - ml * scale, hw = nuaRong(yy);
       el("line", { x1: W / 2 + hw - 20, x2: W / 2 + hw - 4, y1: yy, y2: yy, stroke: "#5b7378", "stroke-width": 1.4, opacity: 0.55 });
       const t = el("text", { x: W / 2 + hw - 38, y: yy + 3.5, "font-size": 10, fill: "#4f666b", "text-anchor": "end", "font-family": "system-ui,sans-serif" });
       t.textContent = ml;
     }
-    if (this.tongMl() > this.dungTich) {
+    if (this.hienVach && this.tongMl() > this.dungTich) {
       el("text", { x: W / 2, y: 18, "text-anchor": "middle", "font-size": 14, fill: "#c0392b", "font-weight": 700 }).textContent = "Tràn ly!";
     }
   }
